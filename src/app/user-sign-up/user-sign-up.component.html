@@ -1,0 +1,42 @@
+<div class="container">
+  <h2>User Sign up Page</h2>
+  <div class="container">
+    <form (ngSubmit)="onSubmit()" #userSignUpForm="ngForm">
+      <div>
+        <label for="firstName">First Name</label>
+        <span>
+          <input type="text" required>
+        </span>
+
+      </div>
+      <div>
+        <label for="lastName">Last Name</label>
+        <span>
+          <input type="text" required>
+        </span>
+
+      </div>
+      <div>
+        Age
+        <span>
+          <select>
+            <option *ngFor="let i of age">{{i}}</option>
+          </select>
+        </span>
+        <div>
+          <label for="username">Username</label>
+          <input type="text">
+        </div>
+        <div>
+          <label for="password">Password</label>
+          <input type="text">
+          <input type="text">
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input type="text">
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
