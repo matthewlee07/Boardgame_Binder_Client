@@ -1,0 +1,69 @@
+<div class="container">
+  <form (ngSubmit)="onSubmit()" #boardGameForm="ngForm">
+    <h2>Filter games</h2>
+    <div class="form-group">
+      <label for="numPlayers">Number of Players</label>
+      Min
+      <select name="" id="" opt [(ngModel)]="playersMin" name="playersMin">
+        <option *ngFor="let i of counter">{{i+1}}</option>
+      </select>
+      Max
+      <!-- ngModel for everything in the form -->
+      <select name="" id="" opt>
+        <option *ngFor="let i of counter">{{i+1}}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="playingTime">Playing Time (minutes)</label>
+      Min
+      <select name="" id="">
+        <option value="5">5</option>
+        <option value="10">10</option>
+        <option value="15">15</option>
+        <option value="30">30</option>
+        <option value="45">45</option>
+        <option value="60">60</option>
+        <option value="90">90</option>
+        <option value="120">120+</option>
+      </select>
+      Max
+      <select name="" id="">
+        <option value="5">5</option>
+        <option value="10">10</option>
+        <option value="15">15</option>
+        <option value="30">30</option>
+        <option value="45">45</option>
+        <option value="60">60</option>
+        <option value="90">90</option>
+        <option value="120">120+</option>
+      </select>
+      <!-- <br> Min
+      <select name="" id="">
+        <option *ngFor="let i of time">{{i}}</option>
+      </select>
+      Max
+      <select name="" id="">
+        <option *ngFor="let i of time">{{i}}</option>
+      </select> -->
+    </div>
+
+    <div class="form-group">
+      <label for="rating">Rating</label>
+      Min
+      <select name="" id="">
+        <option *ngFor="let i of ratings">{{i}}</option>
+      </select>
+      Max
+      <select name="" id="">
+        <option *ngFor="let i of ratings">{{i}}</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-success" [disabled]="!boardGameForm.form.valid">Submit</button>
+  </form>
+</div>
+
+<div>
+  <h2>Submitted status: {{this.submitted}}</h2>
+  {{playersMin}}
+</div>

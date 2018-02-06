@@ -12,6 +12,7 @@ import { BoardgameInfoComponent } from './boardgame-info/boardgame-info.componen
 import { UserSettingsComponent } from './user-settings/user-settings.component';
 import { UserBoardgamesComponent } from './user-boardgames/user-boardgames.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { BoardgameSearchFormComponent } from './boardgame-search-form/boardgame-search-form.component';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -37,6 +38,7 @@ const appRoutes: Routes = [
     UserSettingsComponent,
     UserBoardgamesComponent,
     NavbarComponent,
+    BoardgameSearchFormComponent,
   ],
   imports: [
     BrowserModule,
