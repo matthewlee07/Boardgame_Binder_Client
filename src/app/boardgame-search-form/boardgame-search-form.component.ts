@@ -7,19 +7,19 @@ import { Component } from '@angular/core';
 })
 export class BoardgameSearchFormComponent {
   counter = Array.from(Array(20).keys());
-  // time = Array.from(Array(20).keys()).map(i => (i + 1) * 5);
   ratings = Array.from(Array(21).keys()).map(i => i / 2);
 
-
-  playersMin = 1;
-  playersMax = 20;
-  playingTimeMin = 0;
-  playingTimeMax = 120;
-  ratingMin = 0;
-  ragingMax = 10;
+  minplayers = 2;
+  maxplayers = 5;
+  minplayingtime = 15;
+  maxplayingtime = 60;
+  minrating = 7.5;
+  maxrating = 10;
 
   submitted = false;
   onSubmit() { this.submitted = true; }
+  search() {
 
+  }
 }
 
