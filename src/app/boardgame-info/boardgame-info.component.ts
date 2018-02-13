@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Boardgame } from '../boardgameModel';
 
 @Component({
   selector: 'app-boardgame-info',
@@ -6,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./boardgame-info.component.css']
 })
 export class BoardgameInfoComponent implements OnInit {
-
+  showDetails = false;
+  @Input() game: Boardgame;
   constructor() { }
 
   ngOnInit() {

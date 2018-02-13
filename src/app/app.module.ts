@@ -13,6 +13,8 @@ import { UserSettingsComponent } from './user-settings/user-settings.component';
 import { UserBoardgamesComponent } from './user-boardgames/user-boardgames.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { BoardgameSearchFormComponent } from './boardgame-search-form/boardgame-search-form.component';
+import { BoardgameService } from './boardgame.service';
+import { HttpClientModule } from '@angular/common/http';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -43,9 +45,10 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [BoardgameService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

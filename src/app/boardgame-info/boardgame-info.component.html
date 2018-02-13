@@ -1,3 +1,7 @@
-<div class="container">
-  <h2>Boardgame Info Page</h2>
+<button (click)="showDetails = !showDetails">details</button>
+<div class="container"[hidden]="!showDetails">
+  <div *ngIf="game">
+    Details: <p [innerHTML]="game.description"></p>
+    <img class="boardgame-img" src={{game.image}}>
+  </div>
 </div>

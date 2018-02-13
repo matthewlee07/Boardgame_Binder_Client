@@ -4,7 +4,7 @@
     <div class="form-group">
       <div>
         <label for="query">Search games</label>
-        <input type="text" class="js-query" placeholder="ie. Settlers of Catan">
+        <input type="text" class="js-query" placeholder="ie. Settlers of Catan" [(ngModel)]="name" name="name">
       </div>
       <label for="numPlayers">Number of Players</label>
       Min
@@ -28,7 +28,8 @@
         <option value="45">45</option>
         <option value="60">60</option>
         <option value="90">90</option>
-        <option value="120">120+</option>
+        <option value="120">120</option>
+        <option value="300">300+</option>
       </select>
       Max
       <select name="" id="" [(ngModel)]="maxplayingtime" name="maxplayingtime">
@@ -39,7 +40,8 @@
         <option value="45">45</option>
         <option value="60">60</option>
         <option value="90">90</option>
-        <option value="120">120+</option>
+        <option value="120">120</option>
+        <option value="300">300+</option>
       </select>
     </div>
 
@@ -60,5 +62,11 @@
 
 <div>
   <h2>Submitted status: {{this.submitted}}</h2>
-  {{playersMin}}
 </div>
+
+<ul>
+  <li *ngFor="let game of boardgames">
+    {{game.name}}, {{game.minplayers}}-{{game.maxplayers}} players, {{game.playingtime}} minutes, {{game.rating}} rating
+    <app-boardgame-info [game]="game"></app-boardgame-info>
+  </li>
+</ul>
