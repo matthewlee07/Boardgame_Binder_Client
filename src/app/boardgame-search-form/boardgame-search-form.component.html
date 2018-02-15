@@ -4,15 +4,15 @@
     <div class="form-group">
       <div>
         <label for="query">Search games</label>
-        <input type="text" class="js-query" placeholder="ie. Settlers of Catan" [(ngModel)]="name" name="name">
+        <input type="text" class="js-query" placeholder="ie. Settlers of Catan" [(ngModel)]="boardgame.name" name="name">
       </div>
       <label for="numPlayers">Number of Players</label>
       Min
-      <select name="" id="" opt [(ngModel)]="minplayers" name="minplayers">
+      <select name="" id="" opt [(ngModel)]="boardgame.minplayers" name="minplayers">
         <option *ngFor="let i of counter">{{i+1}}</option>
       </select>
       Max
-      <select name="" id="" [(ngModel)]="maxplayers" name="maxplayers">
+      <select name="" id="" [(ngModel)]="boardgame.maxplayers" name="maxplayers">
         <option *ngFor="let i of counter">{{i+1}}</option>
       </select>
     </div>
@@ -20,7 +20,7 @@
     <div class="form-group">
       <label for="playingTime">Playing Time (minutes)</label>
       Min
-      <select name="" id="" [(ngModel)]="minplayingtime" name="minplayingtime">
+      <select name="" id="" [(ngModel)]="boardgame.minplayingtime" name="minplayingtime">
         <option value="5">5</option>
         <option value="10">10</option>
         <option value="15">15</option>
@@ -32,7 +32,7 @@
         <option value="300">300+</option>
       </select>
       Max
-      <select name="" id="" [(ngModel)]="maxplayingtime" name="maxplayingtime">
+      <select name="" id="" [(ngModel)]="boardgame.maxplayingtime" name="maxplayingtime">
         <option value="5">5</option>
         <option value="10">10</option>
         <option value="15">15</option>
@@ -48,25 +48,29 @@
     <div class="form-group">
       <label for="rating">Rating</label>
       Min
-      <select name="" id="" [(ngModel)]="minrating" name="minrating">
+      <select name="" id="" [(ngModel)]="boardgame.minrating" name="minrating">
         <option *ngFor="let i of ratings">{{i}}</option>
       </select>
       Max
-      <select name="" id="" [(ngModel)]="maxrating" name="maxrating">
+      <select name="" id="" [(ngModel)]="boardgame.maxrating" name="maxrating">
         <option *ngFor="let i of ratings">{{i}}</option>
       </select>
     </div>
+    <!-- what? [disabled]="!boardGameForm.form.valid"  -->
     <button type="submit" class="btn btn-success" [disabled]="!boardGameForm.form.valid" (click)="search()">Submit</button>
+    <!-- type="reset" vs submit-->
+    <button type="submit" class="btn btn-default default-hidden" (click)="onReset(); submitted=false">Reset</button>
+
   </form>
 </div>
 
-<div>
+<div [hidden]="!submitted">
   <h2>Submitted status: {{this.submitted}}</h2>
+  <ul>
+    <li *ngFor="let game of boardgames" class="default-hidden individual-game">
+      <span id="game-name">{{game.name}}, </span>{{game.minplayers}}-{{game.maxplayers}} players, {{game.playingtime}} minutes, {{game.rating}}
+      rating
+      <app-boardgame-info [game]="game"></app-boardgame-info>
+    </li>
+  </ul>
 </div>
-
-<ul>
-  <li *ngFor="let game of boardgames">
-    {{game.name}}, {{game.minplayers}}-{{game.maxplayers}} players, {{game.playingtime}} minutes, {{game.rating}} rating
-    <app-boardgame-info [game]="game"></app-boardgame-info>
-  </li>
-</ul>

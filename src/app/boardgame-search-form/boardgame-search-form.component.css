@@ -1,0 +1,14 @@
+/* bootstrap > .hidden, .show */
+/* 
+.default-hidden{
+    display: none;
+} */
+.individual-game{
+    border:1px solid black;
+    padding: 5%;
+    list-style: none;
+}
+
+#game-name{
+    display: block;
+}

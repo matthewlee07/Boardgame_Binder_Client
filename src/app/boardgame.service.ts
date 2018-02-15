@@ -8,17 +8,9 @@ export class BoardgameService {
 
   private boardgameUrl = 'http://localhost:8080/boardgames';
 
-  getBoardGame(name, minplayers, maxplayers, minplayingtime, maxplayingtime, minrating, maxrating): Observable<Boardgame[]> {
-    const params = new HttpParams()
-      .set('name', name)
-      .set('minplayers', minplayers)
-      .set('maxplayers', maxplayers)
-      .set('minplayingtime', minplayingtime)
-      .set('maxplayingtime', maxplayingtime)
-      .set('minrating', minrating)
-      .set('maxrating', maxrating)
-      ;
-    return this.http.get<Boardgame[]>(this.boardgameUrl, { params: params });
+  getBoardGame(boardgame): Observable<Boardgame[]> {
+    const params = new HttpParams();
+    return this.http.get<Boardgame[]>(this.boardgameUrl, { params: boardgame });
   }
 
   constructor(
