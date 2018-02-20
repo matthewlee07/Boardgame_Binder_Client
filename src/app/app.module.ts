@@ -15,6 +15,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { BoardgameSearchFormComponent } from './boardgame-search-form/boardgame-search-form.component';
 import { BoardgameService } from './boardgame.service';
 import { HttpClientModule } from '@angular/common/http';
+import { ConfirmPasswordDirective } from './confirm-password.directive';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -41,6 +42,7 @@ const appRoutes: Routes = [
     UserBoardgamesComponent,
     NavbarComponent,
     BoardgameSearchFormComponent,
+    ConfirmPasswordDirective,
   ],
   imports: [
     BrowserModule,

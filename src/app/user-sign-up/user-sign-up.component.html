@@ -11,24 +11,39 @@
         <input type="text" class="js-query" [(ngModel)]="user.lastName" name="lastName" required>
       </div>
       <div>
-        <label class="form-group" for="age">Age</label>
-        <select>
-          <option *ngFor="let i of age">{{i}}</option>
+        <label class="form-group" for="select">Age</label>
+        <select [(ngModel)]="user.age" name="age">
+          <option *ngFor="let i of age" [value]="i">{{i}}</option>
         </select>
         <div>
           <label class="form-group" for="query">Username</label>
           <input type="text" class="js-query" [(ngModel)]="user.username" name="username" required>
         </div>
-        <div>
-          <label class="form-group" for="query">Password</label>
-          <input type="text" class="js-query" [(ngModel)]="user.password" name="password" required>
-          <br>
-          <label class="form-group" for="query">Confirm Password</label>
-          <input type="text" class="js-query" [(ngModel)]="user.confirmPassword" name="confirmPassword" required>
+        <div ngModelGroup="password" #userPassword="ngModelGroup" required>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <!-- password is only minlength for now -->
+            <input type="password" [(ngModel)]="user.password" name="password" minlength="8" required>
+          </div>
+          <div class="form-group">
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" [(ngModel)]="user.confirmPassword" appConfirmPassword="password" name="confirmPassword" required>
+          </div>
+          <!-- not checking for matching passwords -->
+          <div *ngIf="(userPassword.invalid|| userPassword.value?.pwd != userPassword.value?.confirmPwd) && (userPassword.touched)"
+            class="alert alert-danger">
+            <div *ngIf="userPassword.invalid; else nomatch">
+              Password needs to be more than 8 characters
+            </div>
+            <ng-template #nomatch>
+              Passwords don't match
+            </ng-template>
+          </div>
         </div>
         <div>
           <label class="form-group" for="query">Email</label>
-          <input type="text" class="js-query" [(ngModel)]="user.email" name="email" required>
+          <input type="text" class="js-query" [(ngModel)]="user.email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+            required>
         </div>
       </div>
       <div class="form-group checkbox">
@@ -36,7 +51,7 @@
           <input type="checkbox" class="js-query" [(ngModel)]="user.terms" name="terms" required> Confirm that you've read the Terms and Conditions
         </label>
       </div>
-      <button type="submit" class="btn btn-success">Submit</button>
+      <button type="submit" class="btn btn-success" [disabled]="!userSignUpForm.form.valid">Submit</button>
     </form>
   </div>
 </div>
