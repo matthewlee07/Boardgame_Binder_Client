@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { BoardgameService } from '../boardgame.service';
 import { Boardgame } from '../boardgameModel';
+import { BoardgameService } from '../boardgame.service';
+
 @Component({
   selector: 'app-boardgame-search-form',
   templateUrl: './boardgame-search-form.component.html',

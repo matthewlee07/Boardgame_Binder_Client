@@ -1,5 +1,4 @@
 export class Boardgame {
-    // does this do anything? or should it be as a constructor and used in model
     constructor() {
         this.name = '';
         this.minplayers = 2;

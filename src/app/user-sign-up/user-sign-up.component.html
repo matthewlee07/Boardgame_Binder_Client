@@ -1,42 +1,55 @@
 <div class="container">
-  <h2>User Sign up Page</h2>
+  <h2>Create New </h2>
   <div class="container">
     <form (ngSubmit)="onSubmit()" #userSignUpForm="ngForm">
       <div>
-        <label for="firstName">First Name</label>
-        <span>
-          <input type="text" required>
-        </span>
-
+        <label class="form-group" for="query">First Name</label>
+        <input type="text" class="js-query" [(ngModel)]="user.firstName" name="firstName" required>
       </div>
       <div>
-        <label for="lastName">Last Name</label>
-        <span>
-          <input type="text" required>
-        </span>
-
+        <label class="form-group" for="query">Last Name</label>
+        <input type="text" class="js-query" [(ngModel)]="user.lastName" name="lastName" required>
       </div>
       <div>
-        Age
-        <span>
-          <select>
-            <option *ngFor="let i of age">{{i}}</option>
-          </select>
-        </span>
+        <label class="form-group" for="age">Age</label>
+        <select>
+          <option *ngFor="let i of age">{{i}}</option>
+        </select>
         <div>
-          <label for="username">Username</label>
-          <input type="text">
+          <label class="form-group" for="query">Username</label>
+          <input type="text" class="js-query" [(ngModel)]="user.username" name="username" required>
         </div>
         <div>
-          <label for="password">Password</label>
-          <input type="text">
-          <input type="text">
+          <label class="form-group" for="query">Password</label>
+          <input type="text" class="js-query" [(ngModel)]="user.password" name="password" required>
+          <br>
+          <label class="form-group" for="query">Confirm Password</label>
+          <input type="text" class="js-query" [(ngModel)]="user.confirmPassword" name="confirmPassword" required>
         </div>
         <div>
-          <label for="email">Email</label>
-          <input type="text">
+          <label class="form-group" for="query">Email</label>
+          <input type="text" class="js-query" [(ngModel)]="user.email" name="email" required>
         </div>
       </div>
+      <div class="form-group checkbox">
+        <label>
+          <input type="checkbox" class="js-query" [(ngModel)]="user.terms" name="terms" required> Confirm that you've read the Terms and Conditions
+        </label>
+      </div>
+      <button type="submit" class="btn btn-success">Submit</button>
     </form>
   </div>
+</div>
+
+<div>
+  <h2>Submitted status: {{this.submitted}}</h2>
+  <ul>
+    <li>firstName: {{user.firstName}}</li>
+    <li>lastName:{{user.lastName}}</li>
+    <li>age:{{user.age}}</li>
+    <li>username:{{user.username}}</li>
+    <li>password:{{user.password}}</li>
+    <li>confirm password:{{user.confirmPassword}}</li>
+    <li>emails:{{user.email}}</li>
+  </ul>
 </div>
