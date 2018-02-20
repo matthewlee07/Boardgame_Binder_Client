@@ -3,52 +3,51 @@
   <div class="container">
     <form (ngSubmit)="onSubmit()" #userSignUpForm="ngForm">
       <div>
+        <!-- why for="query"  -->
         <label class="form-group" for="query">First Name</label>
-        <input type="text" class="js-query" [(ngModel)]="user.firstName" name="firstName" required>
+        <input type="text" class="form-control" [(ngModel)]="user.firstName" name="firstName" required>
       </div>
       <div>
         <label class="form-group" for="query">Last Name</label>
-        <input type="text" class="js-query" [(ngModel)]="user.lastName" name="lastName" required>
+        <input type="text" class="form-control" [(ngModel)]="user.lastName" name="lastName" required>
       </div>
       <div>
         <label class="form-group" for="select">Age</label>
-        <select [(ngModel)]="user.age" name="age">
+        <select class="form-control" [(ngModel)]="user.age" name="age">
           <option *ngFor="let i of age" [value]="i">{{i}}</option>
         </select>
         <div>
           <label class="form-group" for="query">Username</label>
-          <input type="text" class="js-query" [(ngModel)]="user.username" name="username" required>
+          <input type="text" class="form-control" [(ngModel)]="user.username" name="username" required>
         </div>
-        <div ngModelGroup="password" #userPassword="ngModelGroup" required>
-          <div class="form-group">
-            <label for="password">Password</label>
-            <!-- password is only minlength for now -->
-            <input type="password" [(ngModel)]="user.password" name="password" minlength="8" required>
+
+        <div>
+          <label class="form-group" for="password">Password</label>
+          <input type="password" class="form-control" id="password" [(ngModel)]="user.password" name="password" minlength="8"
+            #password="ngModel" required>
+          <div [hidden]="password.valid || password.pristine" class="alert alert-danger">
+            Password must be at least 8 characters
+            <!-- Capitalized, special charater, cannot copy -->
           </div>
-          <div class="form-group">
-            <label for="confirmPassword">Confirm Password</label>
-            <input type="password" [(ngModel)]="user.confirmPassword" appConfirmPassword="password" name="confirmPassword" required>
-          </div>
-          <!-- not checking for matching passwords -->
-          <div *ngIf="(userPassword.invalid|| userPassword.value?.pwd != userPassword.value?.confirmPwd) && (userPassword.touched)"
-            class="alert alert-danger">
-            <div *ngIf="userPassword.invalid; else nomatch">
-              Password needs to be more than 8 characters
-            </div>
-            <ng-template #nomatch>
-              Passwords don't match
-            </ng-template>
+        </div>
+        <div>
+          <label class="form-group" for="confirmPassword">Confirm Password</label>
+          <input type="password" class="form-control" id="confirmPassword" required appConfirmPassword="password" [(ngModel)]="user.confirmPassword"
+            name="confirmPassword" #confirmPassword="ngModel">
+          <div [hidden]="confirmPassword.valid || confirmPassword.pristine" class="alert alert-danger">
+            Password mismatch
+            <!-- cannot paste -->
           </div>
         </div>
         <div>
           <label class="form-group" for="query">Email</label>
-          <input type="text" class="js-query" [(ngModel)]="user.email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+          <input type="text" class="form-control" [(ngModel)]="user.email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
             required>
         </div>
       </div>
       <div class="form-group checkbox">
         <label>
-          <input type="checkbox" class="js-query" [(ngModel)]="user.terms" name="terms" required> Confirm that you've read the Terms and Conditions
+          <input type="checkbox" [(ngModel)]="user.terms" name="terms" required> Confirm that I've read the Terms and Conditions
         </label>
       </div>
       <button type="submit" class="btn btn-success" [disabled]="!userSignUpForm.form.valid">Submit</button>
