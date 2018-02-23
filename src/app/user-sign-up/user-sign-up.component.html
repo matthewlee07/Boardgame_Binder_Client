@@ -24,7 +24,7 @@
         <div>
           <label class="form-group" for="password">Password</label>
           <input type="password" class="form-control" id="password" [(ngModel)]="user.password" name="password" minlength="8" #password="ngModel"
-          (copy)="false" (cut)="false" (paste)="false" required>
+            (copy)="false" (cut)="false" (paste)="false" required>
           <div [hidden]="password.valid || password.pristine" class="alert alert-danger">
             Password must be at least 8 characters
             <!-- Capitalized, special charater, cannot copy -->
@@ -32,8 +32,8 @@
         </div>
         <div>
           <label class="form-group" for="confirmPassword">Confirm Password</label>
-          <input type="password" class="form-control" id="confirmPassword" appConfirmPassword="password"
-            [(ngModel)]="user.confirmPassword" name="confirmPassword" #confirmPassword="ngModel" (paste)="false" required>
+          <input type="password" class="form-control" id="confirmPassword" appConfirmPassword="password" [(ngModel)]="user.confirmPassword"
+            name="confirmPassword" #confirmPassword="ngModel" (paste)="false" required>
           <div [hidden]="confirmPassword.valid || confirmPassword.pristine" class="alert alert-danger">
             Password mismatch
             <!-- cannot paste -->

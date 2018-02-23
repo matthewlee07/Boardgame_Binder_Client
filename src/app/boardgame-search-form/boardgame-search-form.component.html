@@ -4,11 +4,11 @@
     <div class="form-group">
       <div>
         <label for="query">Search games</label>
-        <input type="text" class="js-query" placeholder="Settlers of Catan" [(ngModel)]="boardgame.name" name="name">
+        <input type="text" class="form-control" placeholder="Settlers of Catan" [(ngModel)]="boardgame.name" name="name">
       </div>
       <label for="numPlayers">Number of Players</label>
       Min
-      <select name="" id="" opt [(ngModel)]="boardgame.minplayers" name="minplayers">
+      <select name="" id="" [(ngModel)]="boardgame.minplayers" name="minplayers">
         <option *ngFor="let i of counter">{{i+1}}</option>
       </select>
       Max
