@@ -6,11 +6,14 @@
 ul{
     list-style:none;
     padding-left:0;
+    border: 1px solid red
 }
 
 .individual-game{
     margin: 6px;
     padding: 6px;
+    border: 1px solid green;
+    text-align: center
 }
 
 #game-name{
