@@ -1,6 +1,9 @@
-<button (click)="showDetails = !showDetails">more details</button>
-<button (click)="addGame = !addGame">add game</button>
-<div class="container"[hidden]="!showDetails">
+<div>
+  <button class="btn show-details" (click)="showDetails = !showDetails">more details</button>
+  <button class="btn add-game" (click)="addGame = !addGame">add game</button>
+</div>
+
+<div class="container" [hidden]="!showDetails">
   <div *ngIf="game">
     <p [innerHTML]="game.description"></p>
     <img class="boardgame-img" src={{game.image}}>

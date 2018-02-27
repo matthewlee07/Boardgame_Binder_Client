@@ -16,7 +16,10 @@ import { BoardgameSearchFormComponent } from './boardgame-search-form/boardgame-
 import { BoardgameService } from './boardgame.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ConfirmPasswordDirective } from './confirm-password.directive';
-
+import { MatButtonModule, MatCheckboxModule } from '@angular/material';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'about', component: AboutComponent },
@@ -45,10 +48,10 @@ const appRoutes: Routes = [
     ConfirmPasswordDirective,
   ],
   imports: [
-    BrowserModule,
+    BrowserModule, BrowserAnimationsModule,
     RouterModule.forRoot(appRoutes),
     FormsModule,
-    HttpClientModule
+    HttpClientModule, MatButtonModule, MatCheckboxModule, MatMenuModule, MatIconModule
   ],
   providers: [BoardgameService],
   bootstrap: [AppComponent]

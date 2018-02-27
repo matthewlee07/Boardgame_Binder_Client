@@ -1,14 +1,24 @@
-/* bootstrap > .hidden, .show */
-/* 
-.default-hidden{
-    display: none;
-} */
+.container{
+    display: flex;
+    justify-content: center
+}
+
+ul{
+    list-style:none;
+    padding-left:0;
+}
+
 .individual-game{
-    border:1px solid black;
-    padding: 5%;
-    list-style: none;
+    margin: 6px;
+    padding: 6px;
 }
 
 #game-name{
     display: block;
+    font-weight: bold;
+}
+
+#game-players, #game-playingtime, #game-rating{
+    display: block;
+    text-indent: 5%;
 }

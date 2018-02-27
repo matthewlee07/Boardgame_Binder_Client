@@ -1,51 +1,50 @@
 <div class="container">
-  <h2>Create New </h2>
+  <h2>Sign Up </h2>
   <div class="container">
     <form (ngSubmit)="onSubmit()" #userSignUpForm="ngForm">
       <div>
         <!-- why for="query"  -->
-        <label class="form-group" for="query">First Name</label>
+        <label for="query">First Name</label>
         <input type="text" class="form-control" [(ngModel)]="user.firstName" name="firstName" required>
       </div>
       <div>
-        <label class="form-group" for="query">Last Name</label>
+        <label for="query">Last Name</label>
         <input type="text" class="form-control" [(ngModel)]="user.lastName" name="lastName" required>
       </div>
       <div>
-        <label class="form-group" for="select">Age</label>
+        <label for="select">Age</label>
         <select class="form-control" [(ngModel)]="user.age" name="age">
           <option *ngFor="let i of age" [value]="i">{{i}}</option>
         </select>
         <div>
-          <label class="form-group" for="query">Username</label>
+          <label for="query">Username</label>
           <input type="text" class="form-control" [(ngModel)]="user.username" name="username" required>
         </div>
 
         <div>
-          <label class="form-group" for="password">Password</label>
+          <label for="password">Password</label>
           <input type="password" class="form-control" id="password" [(ngModel)]="user.password" name="password" minlength="8" #password="ngModel"
             (copy)="false" (cut)="false" (paste)="false" required>
           <div [hidden]="password.valid || password.pristine" class="alert alert-danger">
             Password must be at least 8 characters
-            <!-- Capitalized, special charater, cannot copy -->
+            <!-- Capitalized, special charater -->
           </div>
         </div>
         <div>
-          <label class="form-group" for="confirmPassword">Confirm Password</label>
+          <label for="confirmPassword">Confirm Password</label>
           <input type="password" class="form-control" id="confirmPassword" appConfirmPassword="password" [(ngModel)]="user.confirmPassword"
             name="confirmPassword" #confirmPassword="ngModel" (paste)="false" required>
           <div [hidden]="confirmPassword.valid || confirmPassword.pristine" class="alert alert-danger">
             Password mismatch
-            <!-- cannot paste -->
           </div>
         </div>
         <div>
-          <label class="form-group" for="query">Email</label>
+          <label for="query">Email</label>
           <input type="text" class="form-control" [(ngModel)]="user.email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
             required>
         </div>
       </div>
-      <div class="form-group checkbox">
+      <div class="checkbox">
         <label>
           <input type="checkbox" [(ngModel)]="user.terms" name="terms" required> Confirm that I've read the Terms and Conditions
         </label>

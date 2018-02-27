@@ -1,0 +1,8 @@
+.navbar_item{
+    display: block;
+}
+
+.right{
+    display: flex;
+    justify-content: flex-end;
+}
