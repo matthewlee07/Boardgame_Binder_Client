@@ -5,7 +5,7 @@ export class User {
     id: number;
     firstName: string;
     lastName: string;
-    age: number[];
+    dob: Date;
     username: string;
     password: {
         password: string;
@@ -13,4 +13,5 @@ export class User {
     };
     email: string;
     terms: boolean;
+    token: string;
 }

@@ -16,10 +16,11 @@ import { BoardgameSearchFormComponent } from './boardgame-search-form/boardgame-
 import { BoardgameService } from './boardgame.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ConfirmPasswordDirective } from './confirm-password.directive';
-import { MatButtonModule, MatCheckboxModule } from '@angular/material';
+import { MatButtonModule, MatCheckboxModule, MatNativeDateModule } from '@angular/material';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { UserService } from './user.service';
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'about', component: AboutComponent },
@@ -51,9 +52,9 @@ const appRoutes: Routes = [
     BrowserModule, BrowserAnimationsModule,
     RouterModule.forRoot(appRoutes),
     FormsModule,
-    HttpClientModule, MatButtonModule, MatCheckboxModule, MatMenuModule, MatIconModule
+    HttpClientModule, MatButtonModule, MatCheckboxModule, MatMenuModule, MatIconModule, MatNativeDateModule
   ],
-  providers: [BoardgameService],
+  providers: [BoardgameService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -11,5 +11,8 @@ export class UserService {
   constructor(
     private http: HttpClient
   ) { }
-
+  login(user: User) {
+    return this.http.post<User>('http://localhost:8080/auth/login', { username: user.username, password: user.password });
+    // .shareReplay()
+  }
 }

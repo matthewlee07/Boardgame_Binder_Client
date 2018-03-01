@@ -8,11 +8,21 @@ import { UserService } from '../user.service';
   styleUrls: ['./user-login.component.css']
 })
 export class UserLoginComponent {
-  constructor() { }
+  constructor(private userservice: UserService) { }
   user: User = new User();
   submitted = false;
   forgotPassword() {
     console.log('resending password');
   }
-  onSubmit() { this.submitted = true; }
+  onSubmit() {
+    this.submitted = true;
+    this.userservice.login(this.user)
+      .subscribe(
+        (user) => {
+          console.log('User is logged in');
+          console.log(user);
+          // this.router.navigateByUrl('/');
+        }
+      );
+  }
 }
