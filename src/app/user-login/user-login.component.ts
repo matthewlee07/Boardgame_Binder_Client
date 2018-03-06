@@ -14,6 +14,7 @@ export class UserLoginComponent {
   forgotPassword() {
     console.log('resending password');
   }
+
   onSubmit() {
     this.submitted = true;
     this.userservice.login(this.user)
@@ -21,7 +22,6 @@ export class UserLoginComponent {
         (user) => {
           console.log('User is logged in');
           console.log(user);
-          // this.router.navigateByUrl('/');
         }
       );
   }

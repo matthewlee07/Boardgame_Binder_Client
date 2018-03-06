@@ -17,10 +17,11 @@
       </div> -->
 
       <div>
-        <label for="select">Age</label>
-        <select class="form-control" [(ngModel)]="user.age" name="age">
-          <option *ngFor="let i of age" [value]="i">{{i}}</option>
-        </select>
+        <!-- <div>
+          <label for="query">dob[testing]</label>
+          <input type="text" class="form-control" [(ngModel)]="user.dob" name="dob" required>
+        </div> -->
+
         <div>
           <label for="query">Username</label>
           <input type="text" class="form-control" [(ngModel)]="user.username" name="username" required>
@@ -64,7 +65,7 @@
   <ul>
     <li>firstName: {{user.firstName}}</li>
     <li>lastName:{{user.lastName}}</li>
-    <li>age:{{user.age}}</li>
+    <li>dob:{{user.dob}}</li> -->
     <li>username:{{user.username}}</li>
     <li>password:{{user.password}}</li>
     <li>confirm password:{{user.confirmPassword}}</li>

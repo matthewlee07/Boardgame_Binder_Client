@@ -8,11 +8,19 @@ import { UserService } from '../user.service';
   styleUrls: ['./user-sign-up.component.css']
 })
 export class UserSignUpComponent {
-  constructor() { }
+  constructor(private userservice: UserService) { }
   user: User = new User();
-  age = Array.from(Array(83).keys()).map(i => i + 18);
   submitted = false;
 
-  onSubmit() { this.submitted = true; }
-
+  onSubmit() {
+    this.submitted = true;
+    this.userservice.signup(this.user)
+      .subscribe(
+        (user) => {
+          // this.router.navigate('/')
+          console.log('User is signed up');
+          console.log(user);
+        }
+      );
+  }
 }

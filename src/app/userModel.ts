@@ -5,7 +5,7 @@ export class User {
     id: number;
     firstName: string;
     lastName: string;
-    dob: Date;
+    // dob: Date;
     username: string;
     password: {
         password: string;
