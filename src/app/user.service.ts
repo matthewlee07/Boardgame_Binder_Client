@@ -23,7 +23,7 @@ export class UserService {
 
   signup(user: User) {
     return this.http.post<User>('http://localhost:8080/users/', {
-      username: user.username,
+      userName: user.username,
       firstName: user.firstName,
       lastName: user.lastName,
       email: user.email,
