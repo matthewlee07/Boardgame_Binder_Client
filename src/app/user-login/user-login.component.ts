@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { User } from '../userModel';
 import { UserService } from '../user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-login',
@@ -8,7 +9,7 @@ import { UserService } from '../user.service';
   styleUrls: ['./user-login.component.css']
 })
 export class UserLoginComponent {
-  constructor(private userservice: UserService) { }
+  constructor(private userservice: UserService, private router: Router) { }
   user: User = new User();
   submitted = false;
   forgotPassword() {
@@ -20,6 +21,8 @@ export class UserLoginComponent {
     this.userservice.login(this.user)
       .subscribe(
         (user) => {
+          this.userservice.saveuser(user);
+          this.router.navigateByUrl('/home');
           console.log('User is logged in');
           console.log(user);
         }

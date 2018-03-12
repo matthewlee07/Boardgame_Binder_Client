@@ -7,7 +7,7 @@ import { User } from './userModel';
 export class UserService {
 
   private userUrl = 'http://localhost:8080/users';
-
+  private user = null;
   constructor(
     private http: HttpClient
   ) { }
@@ -23,7 +23,7 @@ export class UserService {
 
   signup(user: User) {
     return this.http.post<User>('http://localhost:8080/users/', {
-      username: user.username,
+      userName: user.userName,
       firstName: user.firstName,
       lastName: user.lastName,
       email: user.email,
@@ -32,9 +32,13 @@ export class UserService {
     });
   }
 
+  getuser() {
+    return this.user;
+  }
+
   login(user: User) {
     return this.http.post<User>('http://localhost:8080/auth/login', {
-      username: user.username,
+      userName: user.userName,
       password: user.password
     });
   }
@@ -45,11 +49,16 @@ export class UserService {
   //       // login successful if there's a jwt token in the response
   //       if (user && user.token) {
   //         // store user details and jwt token in local storage to keep user logged in between page refreshes
-  //         localStorage.setItem('currentUser', JSON.stringify(user));
+  //
   //       }
   //       return user;
   //     });
   // }
+
+  saveuser(user: User) {
+    localStorage.setItem('user', JSON.stringify(user));
+    this.user = user;
+  }
 
   logout() {
     localStorage.removeItem('user');

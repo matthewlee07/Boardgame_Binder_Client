@@ -4,7 +4,7 @@
     <form (ngSubmit)="onSubmit()" #userLogInForm="ngForm">
       <div>
         <label for="query">Username</label>
-        <input type="text" class="form-group" [(ngModel)]="user.username" name="username" required>
+        <input type="text" class="form-group" [(ngModel)]="user.userName" name="userName" required>
       </div>
       <div>
         <!-- what's the difference of type "password" vs "text" -->
@@ -20,7 +20,7 @@
 <div>
   <h2>Submitted status: {{this.submitted}}</h2>
   <ul>
-    <li>username: {{user.username}}</li>
+    <li>username: {{user.userName}}</li>
     <li>password: {{user.password}}</li>
   </ul>
 </div>

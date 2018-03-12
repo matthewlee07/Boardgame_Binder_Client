@@ -6,7 +6,7 @@ export class User {
     firstName: string;
     lastName: string;
     // dob: Date;
-    username: string;
+    userName: string;
     password: {
         password: string;
         confirmPassword: string;
