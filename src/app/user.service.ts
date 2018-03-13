@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
 import { User } from './userModel';
 
 @Injectable()
@@ -33,12 +34,13 @@ export class UserService {
   }
 
   getuser() {
-    return this.user;
+
   }
 
   login(user: User) {
-    return this.http.post<User>('http://localhost:8080/auth/login', {
-      userName: user.userName,
+    return this.http.post<User>('http://localhost:8080/auth/login/', {
+      // unsure why, but this is the only 'username' vs 'userName'
+      username: user.userName,
       password: user.password
     });
   }
