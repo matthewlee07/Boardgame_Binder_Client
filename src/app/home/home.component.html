@@ -1,3 +1,6 @@
+<div class="welcome" *ngIf="userservice.isLoggedIn()">
+  Welcome {{userservice.getuser().userName}}
+</div>
 <div class="container">
   <h1>Boardgame Finder</h1>
   <app-boardgame-search-form></app-boardgame-search-form>

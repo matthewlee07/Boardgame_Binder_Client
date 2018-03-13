@@ -34,7 +34,11 @@ export class UserService {
   }
 
   getuser() {
+    return this.user;
+  }
 
+  isLoggedIn() {
+    return !!this.user;
   }
 
   login(user: User) {
@@ -44,6 +48,7 @@ export class UserService {
       password: user.password
     });
   }
+
   // http://jasonwatmore.com/post/2017/02/22/mean-with-angular-2-user-registration-and-login-example-tutorial
   // login(username: string, password: string) {
   //   return this.http.post<any>(appConfig.apiUrl + '/users/authenticate', { username: username, password: password })
@@ -64,5 +69,6 @@ export class UserService {
 
   logout() {
     localStorage.removeItem('user');
+    this.user = null;
   }
 }

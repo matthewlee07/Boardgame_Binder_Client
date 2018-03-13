@@ -8,13 +8,8 @@ import { User } from '../userModel';
 })
 
 
-export class HomeComponent implements OnInit {
+export class HomeComponent {
 
   constructor(private userservice: UserService) { }
-  private user: User;
-
-  ngOnInit() {
-    this.user = this.userservice.getuser();
-  }
 
 }
