@@ -20,11 +20,11 @@ export class UserLoginComponent {
     this.submitted = true;
     this.userservice.login(this.user)
       .subscribe(
-        (user) => {
-          this.userservice.saveuser(user);
+        (authToken) => {
+          this.userservice.saveuser(authToken);
           this.router.navigateByUrl('/home');
           console.log('User is logged in');
-          console.log(user);
+          console.log(authToken);
         }
       );
     // this.userservice.userBoardgames(this.user)

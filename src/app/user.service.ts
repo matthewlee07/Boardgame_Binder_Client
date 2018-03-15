@@ -1,17 +1,22 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/map';
+import { catchError, map } from 'rxjs/operators';
+import { of } from 'rxjs/observable/of';
 import { User } from './userModel';
 
 @Injectable()
 export class UserService {
 
-  private userUrl = 'http://localhost:8080/users';
   private user = null;
-  constructor(
-    private http: HttpClient
-  ) { }
+  constructor(private http: HttpClient) { }
+
+  private handleError<T>(operation = 'operation', result?: T) {
+    return (error: any): Observable<T> => {
+      console.error(error);
+      return of(result as T);
+    };
+  }
 
   signup(user: User) {
     return this.http.post<User>('http://localhost:8080/users/', {
@@ -21,7 +26,8 @@ export class UserService {
       email: user.email,
       password: user.password,
       // dob: user.dob
-    });
+    })
+      .pipe(catchError(this.handleError('userginup', [])));
   }
 
   getuser() {
@@ -33,19 +39,12 @@ export class UserService {
   }
 
   login(user: User) {
-    return this.http.post<User>('http://localhost:8080/auth/login/', {
+    return this.http.post<any>('http://localhost:8080/auth/login/', {
       // unsure why, but this is the only 'username' vs 'userName'
       username: user.userName,
       password: user.password,
-      id: user.id,
     });
   }
-
-  // userBoardgames(user: User) {
-  //   return this.http.post<User>('http://localhost:8080/userboardgames/{{user.id}}', {
-  //     games: user.games
-  //   });
-  // }
 
   saveuser(user: User) {
     localStorage.setItem('user', JSON.stringify(user));

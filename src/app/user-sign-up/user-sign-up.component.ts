@@ -20,6 +20,8 @@ export class UserSignUpComponent {
           // this.router.navigate('/')
           console.log('User is signed up');
           console.log(user);
+        }, err => {
+          console.log(err);
         }
       );
   }
