@@ -36,9 +36,16 @@ export class UserService {
     return this.http.post<User>('http://localhost:8080/auth/login/', {
       // unsure why, but this is the only 'username' vs 'userName'
       username: user.userName,
-      password: user.password
+      password: user.password,
+      id: user.id,
     });
   }
+
+  // userBoardgames(user: User) {
+  //   return this.http.post<User>('http://localhost:8080/userboardgames/{{user.id}}', {
+  //     games: user.games
+  //   });
+  // }
 
   saveuser(user: User) {
     localStorage.setItem('user', JSON.stringify(user));

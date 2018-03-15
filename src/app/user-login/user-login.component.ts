@@ -27,5 +27,11 @@ export class UserLoginComponent {
           console.log(user);
         }
       );
+    // this.userservice.userBoardgames(this.user)
+    //   .subscribe(
+    //     (user) => {
+
+    //     }
+    //   );
   }
 }
