@@ -73,7 +73,12 @@
   </ul>
 </div>
 
-<div >
+<div *ngIf="err">
   <p>testing error</p>
   <p>{{err}}</p>
+</div>
+
+<div *ngIf="success">
+  <p>Success!</p>
+  <p>{{user.firstName}} added!</p>
 </div>
