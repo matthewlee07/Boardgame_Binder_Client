@@ -12,23 +12,21 @@ export class UserSignUpComponent {
   user: User = new User();
   submitted = false;
   err = null;
+  success = false;
 
   onSubmit() {
     this.submitted = true;
     this.userservice.signup(this.user)
       .subscribe(
         (user) => {
-          if (user.code && user.code == '422') {
-            this.err = user.message;
-          } else {
-            this.user = user;
-          }
-          // this.router.navigate('/')
+          this.user = user;
           console.log('User is signed up');
-          console.log(user);
+          console.log('', user);
+          this.err = null;
+          this.success = true;
         }, err => {
           console.log(err);
-          this.err = 'Username or email unavailable';
+          this.err = err;
         }
       );
   }

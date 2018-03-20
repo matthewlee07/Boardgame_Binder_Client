@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/throw';
 import { catchError, map } from 'rxjs/operators';
 import { of } from 'rxjs/observable/of';
 import { User } from './userModel';
@@ -11,11 +12,9 @@ export class UserService {
   private user = null;
   constructor(private http: HttpClient) { }
 
-  private handleError<T>(operation = 'operation', result?: T) {
-    return (error: any): Observable<T> => {
-      console.error(error);
-      return of(result as T);
-    };
+  private handleError<T>(error: Response | any) {
+    console.log('An error has happened', error);
+    return Observable.throw(error.error.message);
   }
 
   signup(user: User) {
@@ -27,7 +26,7 @@ export class UserService {
       password: user.password,
       // dob: user.dob
     })
-      .pipe(catchError(this.handleError('userginup', [])));
+      .pipe(catchError(this.handleError));
   }
 
   getuser() {
