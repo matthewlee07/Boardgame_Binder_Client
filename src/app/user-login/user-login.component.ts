@@ -12,6 +12,7 @@ export class UserLoginComponent {
   constructor(private userservice: UserService, private router: Router) { }
   user: User = new User();
   submitted = false;
+  loggedIn = false;
   forgotPassword() {
     console.log('resending password');
   }
@@ -23,7 +24,7 @@ export class UserLoginComponent {
         (authToken) => {
           this.userservice.saveuser(authToken);
           this.router.navigateByUrl('/home');
-          console.log('User is logged in');
+          this.loggedIn = true;
           console.log(authToken);
         }
       );

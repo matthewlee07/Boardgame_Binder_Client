@@ -19,9 +19,11 @@ export class BoardgameInfoComponent implements OnInit {
   constructor() { }
   // constructor(private userservice: UserService, private userboardgames: UserBoardgames, private router: Router) { }
   // user: User = new User();
-  // addGame() {
-  //   if !user.isLoggedIn() { this.router.navigateByUrl('/userLogin')}
-  // }
+
+  // loggedIn = false;
+  addGame() {
+    console.log('trying to add game');
+  }
 
   ngOnInit() {
   }

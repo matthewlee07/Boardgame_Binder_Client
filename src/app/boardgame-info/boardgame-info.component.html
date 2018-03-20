@@ -1,6 +1,6 @@
 <div>
   <button class="btn show-details" (click)="showDetails = !showDetails">more details</button>
-  <button class="btn add-game" (click)="addGame = !addGame">add game</button>
+  <button class="btn add-game" (click)="addGame()">add game</button>
 </div>
 
 <div [hidden]="!showDetails">

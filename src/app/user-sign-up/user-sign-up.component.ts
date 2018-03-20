@@ -11,17 +11,24 @@ export class UserSignUpComponent {
   constructor(private userservice: UserService) { }
   user: User = new User();
   submitted = false;
+  err = null;
 
   onSubmit() {
     this.submitted = true;
     this.userservice.signup(this.user)
       .subscribe(
         (user) => {
+          if (user.code && user.code == '422') {
+            this.err = user.message;
+          } else {
+            this.user = user;
+          }
           // this.router.navigate('/')
           console.log('User is signed up');
           console.log(user);
         }, err => {
           console.log(err);
+          this.err = 'Username or email unavailable';
         }
       );
   }
