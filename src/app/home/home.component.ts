@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { UserService } from '../user.service';
-import { User } from '../userModel';
+import { UserBoardgamesService } from '../user-boardgames.service';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',

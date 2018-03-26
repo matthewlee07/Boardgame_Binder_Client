@@ -1,12 +1,13 @@
 <div class="right">
     <mat-menu #appMenu="matMenu">
         <button mat-menu-item routerLink="/home">Home</button>
-        <button mat-menu-item routerLink="/userSignUp">Sign Up</button>
-        <button mat-menu-item routerLink="/userLogin">Log In</button>
         <button mat-menu-item routerLink="/about">About</button>
-        <!-- need to add a 'user login' homepage -->
-        <button mat-menu-item routerLink="/userSettings">User Settings</button>
-        <button mat-menu-item routerLink="/userBoardgames">User Boardgames</button>
+        <button mat-menu-item routerLink="/userSignUp" *ngIf="!userservice.isLoggedIn()">Sign Up</button>
+        <button mat-menu-item routerLink="/userLogin" *ngIf="!userservice.isLoggedIn()">Log In</button>
+        <!-- loggOut() -->
+        <button mat-menu-item *ngIf="userservice.isLoggedIn()">Log Out</button>
+        <button mat-menu-item routerLink="/userSettings" *ngIf="userservice.isLoggedIn()">My Settings</button>
+        <button mat-menu-item routerLink="/userBoardgames" *ngIf="userservice.isLoggedIn()">My Boardgames</button>
     </mat-menu>
 
     <button mat-icon-button [matMenuTriggerFor]="appMenu">

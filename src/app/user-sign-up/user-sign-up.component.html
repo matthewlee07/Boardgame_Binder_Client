@@ -25,6 +25,9 @@
         <div>
           <label for="query">Username</label>
           <input type="text" class="form-control" [(ngModel)]="user.userName" name="userName" required>
+          <!-- <div [hidden]="" class="alert alert-danger">
+            Username or Email taken
+          </div> -->
         </div>
 
         <div>
@@ -48,6 +51,9 @@
           <label for="query">Email</label>
           <input type="text" class="form-control" [(ngModel)]="user.email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
             required>
+          <!-- <div [hidden]="" class="alert alert-danger">
+            Username or Email taken
+          </div> -->
         </div>
       </div>
       <div class="checkbox">
@@ -74,11 +80,16 @@
 </div>
 
 <div *ngIf="err">
-  <p>testing error</p>
-  <p>{{err}}</p>
+  <p>testing error: {{err}}</p>
 </div>
 
 <div *ngIf="success">
   <p>Success!</p>
-  <p>{{user.firstName}} added!</p>
+  <!-- <p>{{user.firstName}} added!</p> -->
 </div>
+
+<!-- if username or email is taken, those fields should be reset
+  if submitting successfullly after a failure, still shows error div
+  new success message isn't rendered
+  user is null, undefined on ngModel
+-->

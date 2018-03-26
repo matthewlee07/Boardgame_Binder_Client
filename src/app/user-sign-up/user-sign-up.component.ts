@@ -18,7 +18,7 @@ export class UserSignUpComponent {
     this.submitted = true;
     this.userservice.signup(this.user)
       .subscribe(
-        (user) => {
+        user => {
           this.user = user;
           console.log('User is signed up');
           console.log('', user);

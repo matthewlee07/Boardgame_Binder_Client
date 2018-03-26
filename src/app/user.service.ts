@@ -34,6 +34,7 @@ export class UserService {
   }
 
   isLoggedIn() {
+    // why use !!
     return !!this.user;
   }
 
