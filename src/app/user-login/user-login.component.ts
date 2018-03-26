@@ -25,7 +25,6 @@ export class UserLoginComponent {
           this.userservice.saveuser(authToken);
           this.router.navigateByUrl('/home');
           this.loggedIn = true;
-          console.log(authToken);
         }
       );
   }

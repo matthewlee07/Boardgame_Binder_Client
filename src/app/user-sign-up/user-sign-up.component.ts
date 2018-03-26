@@ -20,12 +20,10 @@ export class UserSignUpComponent {
       .subscribe(
         user => {
           this.user = user;
-          console.log('User is signed up');
           console.log('', user);
           this.err = null;
           this.success = true;
         }, err => {
-          console.log(err);
           this.err = err;
         }
       );
