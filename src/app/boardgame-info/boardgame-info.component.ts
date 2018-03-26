@@ -17,10 +17,6 @@ export class BoardgameInfoComponent implements OnInit {
   showDetails = false;
   @Input() game: Boardgame;
   constructor() { }
-  // constructor(private userservice: UserService, private userboardgames: UserBoardgames, private router: Router) { }
-  // user: User = new User();
-
-  // loggedIn = false;
   addGame() {
     console.log('trying to add game');
   }

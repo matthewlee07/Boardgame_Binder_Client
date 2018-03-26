@@ -52,6 +52,7 @@ export class UserService {
   }
 
   logout() {
+    console.log('logging out');
     localStorage.removeItem('user');
     this.user = null;
   }

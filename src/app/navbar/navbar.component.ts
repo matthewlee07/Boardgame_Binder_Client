@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { User } from '../userModel';
 import { UserService } from '../user.service';
 import { UserBoardgamesService } from '../user-boardgames.service';
 
@@ -11,4 +12,7 @@ export class NavbarComponent {
   // need to understand this
   constructor(private userservice: UserService) { }
 
+  logout() {
+    this.userservice.logout();
+  }
 }
