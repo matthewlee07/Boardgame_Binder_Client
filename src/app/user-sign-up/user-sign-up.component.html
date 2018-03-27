@@ -3,7 +3,6 @@
   <div class="container">
     <form (ngSubmit)="onSubmit()" #userSignUpForm="ngForm">
       <div>
-        <!-- why for="query"  -->
         <label for="query">First Name</label>
         <input type="text" class="form-control" [(ngModel)]="user.firstName" name="firstName" required>
       </div>
@@ -11,23 +10,13 @@
         <label for="query">Last Name</label>
         <input type="text" class="form-control" [(ngModel)]="user.lastName" name="lastName" required>
       </div>
-      <!-- <div>
-        <input [(ngModel)]="user.dob" [matDatepicker]="myDatepicker">
-        <mat-datepicker #myDatepicker></mat-datepicker>
-      </div> -->
-
       <div>
-        <!-- <div>
-          <label for="query">dob[testing]</label>
-          <input type="text" class="form-control" [(ngModel)]="user.dob" name="dob" required>
-        </div> -->
-
         <div>
           <label for="query">Username</label>
-          <input type="text" class="form-control" [(ngModel)]="user.userName" name="userName" required>
-          <!-- <div [hidden]="" class="alert alert-danger">
+          <input type="text" class="form-control" [(ngModel)]="user.userName" name="userName" #userName="ngModel" required>
+          <div [hidden]="!err || userName.pristine" class="alert alert-danger">
             Username or Email taken
-          </div> -->
+          </div>
         </div>
 
         <div>
@@ -49,11 +38,11 @@
         </div>
         <div>
           <label for="query">Email</label>
-          <input type="text" class="form-control" [(ngModel)]="user.email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+          <input type="text" class="form-control" [(ngModel)]="user.email" name="email" #email="ngModel" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
             required>
-          <!-- <div [hidden]="" class="alert alert-danger">
+          <div [hidden]="!err || email.pristine" class="alert alert-danger">
             Username or Email taken
-          </div> -->
+          </div>
         </div>
       </div>
       <div class="checkbox">
@@ -85,7 +74,7 @@
 
 <div *ngIf="success">
   <p>Success!</p>
-  <!-- <p>{{user.firstName}} added!</p> -->
+  <p>{{userservice.getuser().firstName}} added!</p>
 </div>
 
 <!-- if username or email is taken, those fields should be reset

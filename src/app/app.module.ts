@@ -22,6 +22,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UserService } from './user.service';
 import { LoginRouteGuard } from './loginRouteGuard';
+import { UserBoardgamesService } from './user-boardgames.service';
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'about', component: AboutComponent },
@@ -55,7 +56,7 @@ const appRoutes: Routes = [
     FormsModule,
     HttpClientModule, MatButtonModule, MatCheckboxModule, MatMenuModule, MatIconModule, MatNativeDateModule
   ],
-  providers: [BoardgameService, UserService, LoginRouteGuard],
+  providers: [BoardgameService, UserService, LoginRouteGuard, UserBoardgamesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

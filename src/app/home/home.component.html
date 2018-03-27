@@ -7,5 +7,6 @@
 </div>
 
 <div class="userGames" *ngIf="userservice.isLoggedIn()">
-  Your games {{UserBoardgamesService}}
+  <span>Your games </span>
+  <div *ngFor="let i of games">{{i.name}}</div>
 </div>

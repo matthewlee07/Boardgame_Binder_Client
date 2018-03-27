@@ -23,6 +23,7 @@ export class UserSignUpComponent {
           console.log('', user);
           this.err = null;
           this.success = true;
+          this.userservice.saveuser(user);
         }, err => {
           this.err = err;
         }

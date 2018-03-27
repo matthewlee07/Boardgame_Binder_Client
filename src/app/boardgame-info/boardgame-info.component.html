@@ -1,6 +1,8 @@
 <div>
   <button class="btn show-details" (click)="showDetails = !showDetails">more details</button>
   <button class="btn add-game" (click)="addGame()">add game</button>
+  <div *ngIf="userservice.isLoggedIn()">you can add</div>
+  <div *ngIf="!userservice.isLoggedIn()">Login to add game</div>
 </div>
 
 <div [hidden]="!showDetails">

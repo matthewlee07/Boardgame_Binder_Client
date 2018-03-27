@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
 import { UserBoardgamesService } from '../user-boardgames.service';
 
@@ -9,8 +9,15 @@ import { UserBoardgamesService } from '../user-boardgames.service';
 })
 
 
-export class HomeComponent {
+export class HomeComponent implements OnInit {
+  private games = [];
+  constructor(private userservice: UserService, private userboardgameservice: UserBoardgamesService) { }
 
-  constructor(private userservice: UserService) { }
-
+  ngOnInit() {
+    if (this.userservice.isLoggedIn()) {
+      this.userboardgameservice.getGames(this.userservice.getuser()).subscribe(user => {
+        this.games = user.games;
+      });
+    }
+  }
 }
