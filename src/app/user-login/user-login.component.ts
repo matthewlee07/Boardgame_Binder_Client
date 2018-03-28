@@ -13,6 +13,7 @@ export class UserLoginComponent {
   user: User = new User();
   submitted = false;
   loggedIn = false;
+  err = null;
   forgotPassword() {
     console.log('resending password');
   }
@@ -25,6 +26,8 @@ export class UserLoginComponent {
           this.userservice.saveuser(authToken);
           this.router.navigateByUrl('/home');
           this.loggedIn = true;
+        }, err => {
+          this.err = err;
         }
       );
   }
