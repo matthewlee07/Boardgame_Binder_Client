@@ -10,6 +10,7 @@ import { UserBoardgamesService } from '../user-boardgames.service';
 
 
 export class HomeComponent implements OnInit {
+  // question about lifecyle hooks, should I use ngOnChanges?
   private games = [];
   constructor(private userservice: UserService, private userboardgameservice: UserBoardgamesService) { }
 

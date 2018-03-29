@@ -1,8 +1,7 @@
 <div>
   <button class="btn show-details" (click)="showDetails = !showDetails">more details</button>
-  <button class="btn add-game" (click)="addGame()">add game</button>
-  <div *ngIf="userservice.isLoggedIn()">you can add</div>
-  <div *ngIf="!userservice.isLoggedIn()">Login to add game</div>
+  <button class="btn add-game" (click)="addGame()" *ngIf="userservice.isLoggedIn()">add game</button>
+  <button class="btn add-game" routerLink="/userLogin" *ngIf="!userservice.isLoggedIn()">login to add game</button>
 </div>
 
 <div [hidden]="!showDetails">

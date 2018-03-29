@@ -1,0 +1,9 @@
+.boardgame-img{
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.more-details{
+    text-align: left
+}

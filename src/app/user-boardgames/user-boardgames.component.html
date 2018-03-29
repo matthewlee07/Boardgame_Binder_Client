@@ -1,3 +1,12 @@
 <div class="container">
   <h2>User Boardgame Page</h2>
 </div>
+
+<div class="userGames">
+  <span>Your games </span>
+  <div *ngFor="let i of games">
+    <p>Game: {{i.name}}</p>
+    <p class="more-details" [innerHTML]="i.description"></p>
+    <img class="boardgame-img" src={{i.image}}>
+  </div>
+</div>
