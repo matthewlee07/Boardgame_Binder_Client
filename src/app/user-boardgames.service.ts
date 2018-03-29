@@ -7,13 +7,19 @@ import { of } from 'rxjs/observable/of';
 import { User } from './userModel';
 import { UserBoardgames } from './user-boardgames-Model';
 import { RequestOptions, Headers } from '@angular/http';
+import {UserService} from './user.service';
 
 @Injectable()
 export class UserBoardgamesService {
 
   // private user = null;
-  constructor(private http: HttpClient) { }
-  private boardgames = [];
+  constructor(private http: HttpClient, private userservice: UserService) {
+    this
+      .getGames(this.userservice.getuser())
+      .subscribe(user => this.boardgames = user.games);
+  }
+
+  boardgames: UserBoardgames[] = [];
 
   private handleError<T>(error: Response | any) {
     console.log('An error has happened', error);
@@ -27,7 +33,7 @@ export class UserBoardgamesService {
         'Authorization': `bearer ${user.token}`
       })
     };
-    return this.http.get<any>('http://localhost:8080/userboardgames', httpOptions);
+    return this.http.get<User>('http://localhost:8080/userboardgames', httpOptions);
   }
 
   addGame(user, gameID) {
@@ -37,6 +43,14 @@ export class UserBoardgamesService {
         'Authorization': `bearer ${user.token}`
       })
     };
-    return this.http.post<any>('http://localhost:8080/userboardgames', { boardgameID: gameID }, httpOptions);
+    return this
+      .http
+      .post<any>('http://localhost:8080/userboardgames', { boardgameID: gameID }, httpOptions);
   }
+
+
+  add(game: UserBoardgames){
+    this.boardgames.push(game);
+  }
+
 }

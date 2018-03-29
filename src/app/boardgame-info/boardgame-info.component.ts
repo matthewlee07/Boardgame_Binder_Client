@@ -16,6 +16,7 @@ export class BoardgameInfoComponent {
   addGame() {
     this.userboardgameservice.addGame(this.userservice.getuser(), this.game.id).subscribe(user => {
       console.log('added game');
+      this.userboardgameservice.add(user);
     });
     console.log('trying to add game');
   }
