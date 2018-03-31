@@ -57,9 +57,9 @@
         </select>
       </div>
     </div>
-    <!-- what? [disabled]="!boardGameForm.form.valid"  -->
+
     <button type="submit" class="btn btn-success" [disabled]="!boardGameForm.form.valid" (click)="search()">Submit</button>
-    <!-- type="reset" vs submit-->
+
     <button type="submit" class="btn btn-default default-hidden" (click)="onReset(); submitted=false">Reset</button>
   </form>
 </div>

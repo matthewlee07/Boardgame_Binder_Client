@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-// import { Router } from '@angular/router';
 import { Boardgame } from '../boardgameModel';
 import { UserBoardgamesService } from '../user-boardgames.service';
 import { UserService } from '../user.service';
