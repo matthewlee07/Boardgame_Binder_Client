@@ -29,6 +29,14 @@ export class UserBoardgamesService {
     return this.http.get<any>('http://localhost:8080/userboardgames', httpOptions);
   }
 
+  /** POST: add a new hero to the database */
+  // addHero(hero: Hero): Observable<Hero> {
+  //   return this.http.post<Hero>(this.heroesUrl, hero, httpOptions)
+  //     .pipe(
+  //       catchError(this.handleError('addHero', hero))
+  //     );
+  // }
+
   addGame(user, gameID) {
     const httpOptions = {
       headers: new HttpHeaders({
@@ -47,13 +55,22 @@ export class UserBoardgamesService {
 
   // }
 
-  removeGame(user, gameID) {
+  /** DELETE: delete the hero from the server */
+  // deleteHero(id: number): Observable<{}> {
+  //   const url = `${this.heroesUrl}/${id}`; // DELETE api/heroes/42
+  //   return this.http.delete(url, httpOptions)
+  //     .pipe(
+  //       catchError(this.handleError('deleteHero'))
+  //     );
+  // }
+
+  deleteGame(user, gameID) {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
         'Authorization': `bearer ${user.token}`
       })
     };
-    return this.http.get<any>('http://localhost:8080/userboardgames', httpOptions);
+    return this.http.delete('http://localhost:8080/userboardgames', httpOptions);
   }
 }

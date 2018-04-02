@@ -12,11 +12,14 @@ export class BoardgameInfoComponent {
   showDetails = false;
   @Input() game: Boardgame;
   constructor(private userservice: UserService, private userboardgameservice: UserBoardgamesService) { }
+
   addGame() {
     this.userboardgameservice.addGame(this.userservice.getuser(), this.game.id).subscribe(user => {
-      console.log('added game');
     });
-    console.log('trying to add game');
   }
 
+  deleteGame() {
+    console.log('trying to remove game');
+    this.userboardgameservice.deleteGame(this.userservice.getuser(), this.game.id).subscribe();
+  }
 }
