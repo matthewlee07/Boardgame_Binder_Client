@@ -55,16 +55,7 @@ export class UserBoardgamesService {
 
   // }
 
-  /** DELETE: delete the hero from the server */
-  // deleteHero(id: number): Observable<{}> {
-  //   const url = `${this.heroesUrl}/${id}`; // DELETE api/heroes/42
-  //   return this.http.delete(url, httpOptions)
-  //     .pipe(
-  //       catchError(this.handleError('deleteHero'))
-  //     );
-  // }
-
-  deleteGame(user, gameID) {
+deleteGame(user, gameID) {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
