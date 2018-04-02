@@ -1,7 +1,11 @@
 <div>
   <button class="btn show-details" (click)="showDetails = !showDetails">more details</button>
+  <!-- add check if user already has game -->
   <button class="btn add-game" (click)="addGame()" *ngIf="userservice.isLoggedIn()">add game</button>
   <button class="btn add-game" routerLink="/userLogin" *ngIf="!userservice.isLoggedIn()">login to add game</button>
+  <!-- if user is logged in:
+  <button class="btn edit-game" (click)="editGame()">edit game</button>
+  <button class="btn remove-game" (click)="removeGame*()">remove game</button> -->
 </div>
 
 <div [hidden]="!showDetails">

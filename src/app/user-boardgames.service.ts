@@ -11,7 +11,6 @@ import { RequestOptions, Headers } from '@angular/http';
 @Injectable()
 export class UserBoardgamesService {
 
-  // private user = null;
   constructor(private http: HttpClient) { }
   private boardgames = [];
 
@@ -38,5 +37,23 @@ export class UserBoardgamesService {
       })
     };
     return this.http.post<any>('http://localhost:8080/userboardgames', { boardgameID: gameID }, httpOptions);
+  }
+
+  // hasGame() {
+
+  // }
+
+  // editGame() {
+
+  // }
+
+  removeGame(user, gameID) {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': `bearer ${user.token}`
+      })
+    };
+    return this.http.get<any>('http://localhost:8080/userboardgames', httpOptions);
   }
 }
