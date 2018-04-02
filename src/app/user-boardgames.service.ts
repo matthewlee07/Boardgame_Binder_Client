@@ -55,7 +55,7 @@ export class UserBoardgamesService {
 
   // }
 
-deleteGame(user, gameID) {
+  deleteGame(user, gameID) {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',

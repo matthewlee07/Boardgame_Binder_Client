@@ -1,13 +1,11 @@
 <div>
-  <button class="btn show-details" (click)="showDetails = !showDetails">more details</button>
-  <!-- add check if user already has game -->
-  <button class="btn add-game" (click)="addGame()" *ngIf="userservice.isLoggedIn()">add game</button>
-  <button class="btn add-game" routerLink="/userLogin" *ngIf="!userservice.isLoggedIn()">login to add game</button>
-  <button class="btn delete-game" (click)="deleteGame()" >remove game</button>
-  <!-- if user is logged in:
-  <button class="btn edit-game" (click)="editGame()">edit game</button>
--->
-  <!-- <button class="btn add-game" (click)="addGame()" *ngIf="userservice.isLoggedIn() && userboardgameservice.hasGame()">user has game</button> -->
+  <!-- !loggedIn() -->
+  <button class="btn btn-default show-details" (click)="showDetails = !showDetails">more details</button>
+  <button class="btn btn-default add-game" routerLink="/userLogin" *ngIf="!userservice.isLoggedIn()">login to add game</button>
+  <!-- loggedIn() -->
+  <button class="btn btn-default add-game" (click)="addGame()" *ngIf="userservice.isLoggedIn()">add game</button>
+  <button class="btn btn-default edit-game" (click)="editGame()" *ngIf="userservice.isLoggedIn()">edit game</button>
+  <button class="btn btn-default delete-game" (click)="deleteGame()" *ngIf="userservice.isLoggedIn()">remove game</button>
 </div>
 
 <div [hidden]="!showDetails">
