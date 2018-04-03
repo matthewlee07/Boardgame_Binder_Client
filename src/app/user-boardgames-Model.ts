@@ -8,7 +8,7 @@ export class UserBoardgames {
     image: string;
     minplayers: number;
     maxplayers: number;
-    playtimetime: number;
+    playingtime: number;
     name: string;
     rating: number;
 }

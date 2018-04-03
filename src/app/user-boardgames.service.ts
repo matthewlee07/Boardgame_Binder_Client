@@ -51,17 +51,29 @@ export class UserBoardgamesService {
 
   // }
 
-  // editGame() {
-
-  // }
+  editGame(user, gameID, minplayers, maxplayers, playingtime, rating) {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': `bearer ${user.token}`,
+      })
+    };
+    return this.http.put<any>('http://localhost:8080/userboardgames/' + gameID, {
+      minplayers: minplayers,
+      maxplayers: maxplayers,
+      playingtime: playingtime,
+      rating: rating
+    },
+      httpOptions);
+  }
 
   deleteGame(user, gameID) {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
-        'Authorization': `bearer ${user.token}`
+        'Authorization': `bearer ${user.token}`,
       })
     };
-    return this.http.delete('http://localhost:8080/userboardgames', httpOptions);
+    return this.http.delete<any>('http://localhost:8080/userboardgames/' + gameID, httpOptions);
   }
 }

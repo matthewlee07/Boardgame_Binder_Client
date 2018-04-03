@@ -9,15 +9,7 @@ import { UserBoardgamesService } from '../user-boardgames.service';
 })
 
 
-export class HomeComponent implements OnInit {
-  private games = [];
+export class HomeComponent {
   constructor(private userservice: UserService, private userboardgameservice: UserBoardgamesService) { }
 
-  ngOnInit() {
-    if (this.userservice.isLoggedIn()) {
-      this.userboardgameservice.getGames(this.userservice.getuser()).subscribe(user => {
-        this.games = user.games;
-      });
-    }
-  }
 }
