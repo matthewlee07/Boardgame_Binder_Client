@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { EditGameForm } from '../edit-boardgame-Model';
 
+
 @Component({
   selector: 'app-edit-game-form',
   templateUrl: './edit-game-form.component.html',
