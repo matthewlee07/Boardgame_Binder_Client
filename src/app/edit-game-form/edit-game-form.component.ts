@@ -12,7 +12,8 @@ export class EditGameFormComponent implements OnInit {
   constructor() { }
   counter = Array.from(Array(20).keys());
   ratings = Array.from(Array(21).keys()).map(i => i / 2);
-
+  onClear() {
+  }
 
   ngOnInit() {
   }
