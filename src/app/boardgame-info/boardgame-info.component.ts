@@ -14,7 +14,7 @@ export class BoardgameInfoComponent implements OnInit {
   showDetails = false;
   showEdit = false;
   edit: EditGameForm;
-  @Input() game: Boardgame;
+  @Input() game: UserBoardgames;
   @Input() userboardgame: UserBoardgames;
   constructor(private userservice: UserService, private userboardgameservice: UserBoardgamesService) { }
 
@@ -44,10 +44,12 @@ export class BoardgameInfoComponent implements OnInit {
       id: this.game.id,
       userID: this.userservice.getuser().id,
       boardGameID: this.userservice.getuser().boardGameID,
-      numplayers: this.userservice.getuser().minplayers,
-      playingtime: this.userservice.getuser().playingtime,
-      rating: this.userservice.getuser().rating,
+      numplayers: this.game.minplayers,
+      playingtime: this.game.playingtime,
+      rating: Math.round(this.game.rating),
       comments: ''
     };
+    console.log(this.edit);
+    console.log(this.game);
   }
 }
