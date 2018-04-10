@@ -2,25 +2,6 @@
   <h2>Your Games</h2>
 </div>
 
-<!-- <div class="userGames">
-  <li *ngFor="let game of games">
-    <span id="game-name">{{game.name}} </span>
-    <span id="game-players">{{game.minplayers}}-{{game.maxplayers}} Players</span>
-    <span id="game-playingtime">{{game.playingtime}} Minutes</span>
-    <span id="game-rating">{{game.rating}} Rating</span>
-    <app-boardgame-info [game]="game"></app-boardgame-info>
-  </li>
-</div> -->
-
-<!-- <button class="btn show-details" (click)="showDetails = !showDetails">more details</button>
-<div [hidden]="!showDetails">
-  <div *ngIf="game">
-    <p class="more-details" [innerHTML]="game.description"></p>
-    <img class="boardgame-img" src={{game.image}}>
-  </div>
-</div> -->
-
-
 <div class="search-results">
   <ul>
     <li *ngFor="let game of games" class="default-hidden individual-game">
