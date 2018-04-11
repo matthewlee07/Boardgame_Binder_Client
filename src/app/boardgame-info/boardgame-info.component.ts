@@ -1,4 +1,3 @@
-import { Boardgame } from '../boardgameModel';
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { UserBoardgamesService } from '../user-boardgames.service';
 import { UserService } from '../user.service';
@@ -23,17 +22,6 @@ export class BoardgameInfoComponent implements OnInit {
     this.userboardgameservice.addGame(this.userservice.getuser(), this.game.id).subscribe(user => {
     });
   }
-
-  // editGame() {
-  //   this.userboardgameservice.editGame(
-  //     this.userservice.getuser(),
-  //     this.userboardgame.id,
-  //     this.userboardgame.minplayers,
-  //     this.userboardgame.maxplayers,
-  //     this.userboardgame.playingtime,
-  //     this.userboardgame.rating).subscribe();
-  //   console.log('trying to edit');
-  // }
 
   deleteGame() {
     console.log('deleting game');
