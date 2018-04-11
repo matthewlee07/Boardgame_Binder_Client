@@ -24,16 +24,16 @@ export class BoardgameInfoComponent implements OnInit {
     });
   }
 
-  editGame() {
-    this.userboardgameservice.editGame(
-      this.userservice.getuser(),
-      this.userboardgame.id,
-      this.userboardgame.minplayers,
-      this.userboardgame.maxplayers,
-      this.userboardgame.playingtime,
-      this.userboardgame.rating).subscribe();
-    console.log('trying to edit');
-  }
+  // editGame() {
+  //   this.userboardgameservice.editGame(
+  //     this.userservice.getuser(),
+  //     this.userboardgame.id,
+  //     this.userboardgame.minplayers,
+  //     this.userboardgame.maxplayers,
+  //     this.userboardgame.playingtime,
+  //     this.userboardgame.rating).subscribe();
+  //   console.log('trying to edit');
+  // }
 
   deleteGame() {
     console.log('deleting game');
@@ -49,7 +49,6 @@ export class BoardgameInfoComponent implements OnInit {
         numplayers: this.game.minplayers,
         playingtime: this.game.playingtime,
         rating: Math.round(this.game.rating),
-        comments: ''
       };
     }
   }

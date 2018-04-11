@@ -7,5 +7,4 @@ export class EditGameForm {
     numplayers: number;
     playingtime: number;
     rating: number;
-    comments: string;
 }

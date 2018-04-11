@@ -13,8 +13,6 @@ export class BoardgameSearchFormComponent {
   boardgames = [];
   counter = Array.from(Array(20).keys());
   ratings = Array.from(Array(21).keys()).map(i => i / 2);
-
-  // tried to use a model from boardgameModel.ts so properties could be reused
   boardgame: Boardgame = new Boardgame();
 
   submitted = false;

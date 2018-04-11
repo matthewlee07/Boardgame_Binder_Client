@@ -1,16 +1,15 @@
 <div class="container">
-  <p>edit game:</p>
-  <div class="container" *ngIf="game">
+  <div class="container" *ngIf="edit">
     <form (ngSubmit)="onSubmit()" #editGameForm="ngForm">
       <div class="form-group">
         <label for="numPlayers">Number of Players</label>
-        <select name="" id="" [(ngModel)]="game.numplayers" name="numplayers">
+        <select name="" id="" [(ngModel)]="edit.numplayers" name="numplayers">
           <option *ngFor="let i of counter">{{i+1}}</option>
         </select>
       </div>
       <div class="form-group">
         <label for="playingTime">Playing Time (mins)</label>
-        <select name="" id="" [(ngModel)]="game.playingtime" name="playingtime">
+        <select name="" id="" [(ngModel)]="edit.playingtime" name="playingtime">
           <option value="5">5</option>
           <option value="10">10</option>
           <option value="15">15</option>
@@ -24,12 +23,12 @@
       </div>
       <div class="form-group">
         <label for="rating">Rating</label>
-        <select name="" id="" [(ngModel)]="game.rating" name="rating">
+        <select name="" id="" [(ngModel)]="edit.rating" name="rating">
           <option *ngFor="let i of ratings">{{i}}</option>
         </select>
       </div>
       <button type="submit" class="btn btn-success" [disabled]="!editGameForm.form.valid" (click)="save()">Save</button>
-      <button type="submit" class="btn btn-default default-hidden" (click)="onClear(); submitted=false">Clear</button>
+      <button type="submit" class="btn btn-default default-hidden" (click)="onReset(); submitted=false">Reset</button>
     </form>
   </div>
 </div>
