@@ -4,6 +4,7 @@ import { UserBoardgamesService } from '../user-boardgames.service';
 import { UserService } from '../user.service';
 import { UserBoardgames } from '../user-boardgames-Model';
 import { EditGameForm } from '../edit-boardgame-Model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-boardgame-info',
@@ -16,7 +17,7 @@ export class BoardgameInfoComponent implements OnInit {
   edit: EditGameForm;
   @Input() game: UserBoardgames;
   @Input() userboardgame: UserBoardgames;
-  constructor(private userservice: UserService, private userboardgameservice: UserBoardgamesService) { }
+  constructor(private userservice: UserService, private userboardgameservice: UserBoardgamesService, public router: Router) { }
 
   addGame() {
     this.userboardgameservice.addGame(this.userservice.getuser(), this.game.id).subscribe(user => {
@@ -40,16 +41,16 @@ export class BoardgameInfoComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.edit = {
-      id: this.game.id,
-      userID: this.userservice.getuser().id,
-      boardGameID: this.userservice.getuser().boardGameID,
-      numplayers: this.game.minplayers,
-      playingtime: this.game.playingtime,
-      rating: Math.round(this.game.rating),
-      comments: ''
-    };
-    console.log(this.edit);
-    console.log(this.game);
+    if (this.userservice.isLoggedIn()) {
+      this.edit = {
+        id: this.game.id,
+        userID: this.userservice.getuser().id,
+        boardGameID: this.userservice.getuser().boardGameID,
+        numplayers: this.game.minplayers,
+        playingtime: this.game.playingtime,
+        rating: Math.round(this.game.rating),
+        comments: ''
+      };
+    }
   }
 }
