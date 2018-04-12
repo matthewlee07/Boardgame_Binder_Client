@@ -11,29 +11,27 @@ import { UserService } from '../user.service';
 })
 export class EditGameFormComponent implements OnInit {
   @Input() edit: EditGameForm;
-  @Input() game: UserBoardgames;
   @Input() userboardgame: UserBoardgames;
   constructor(private userservice: UserService, private userboardgameservice: UserBoardgamesService, ) { }
   counter = Array.from(Array(20).keys());
   ratings = Array.from(Array(21).keys()).map(i => i / 2);
   onReset() {
-    this.edit.numplayers = 5;
-    this.edit.playingtime = 120;
-    this.edit.rating = 7.5;
-    // this.edit.numplayers = this.game.minplayers;
+    this.edit.numplayers = this.userboardgame.minplayers;
+    this.edit.playingtime = this.userboardgame.playingtime;
+    this.edit.rating = Math.round(this.userboardgame.rating);
   }
 
   save() {
     this.userboardgameservice.editGame(
       this.userservice.getuser(),
       this.userboardgame.id,
-      this.userboardgame.minplayers,
-      this.userboardgame.maxplayers,
-      this.userboardgame.playingtime,
-      this.userboardgame.rating).subscribe();
-    console.log('trying to edit');
+      this.edit.numplayers,
+      this.edit.playingtime,
+      this.edit.rating).subscribe();
+    console.log('trying to save');
   }
 
   ngOnInit() {
+
   }
 }

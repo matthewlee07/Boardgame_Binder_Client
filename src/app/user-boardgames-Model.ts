@@ -6,6 +6,7 @@ export class UserBoardgames {
     boardGameID: number;
     description: string;
     image: string;
+    numplayers: number;
     minplayers: number;
     maxplayers: number;
     playingtime: number;

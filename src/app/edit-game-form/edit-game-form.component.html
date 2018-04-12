@@ -1,6 +1,6 @@
 <div class="container">
   <div class="container" *ngIf="edit">
-    <form (ngSubmit)="onSubmit()" #editGameForm="ngForm">
+    <form (ngSubmit)="save()" #editGameForm="ngForm">
       <div class="form-group">
         <label for="numPlayers">Number of Players</label>
         <select name="" id="" [(ngModel)]="edit.numplayers" name="numplayers">
@@ -27,7 +27,7 @@
           <option *ngFor="let i of ratings">{{i}}</option>
         </select>
       </div>
-      <button type="submit" class="btn btn-success" [disabled]="!editGameForm.form.valid" (click)="save()">Save</button>
+      <button type="submit" class="btn btn-success" [disabled]="!editGameForm.form.valid">Save</button>
       <button type="submit" class="btn btn-default default-hidden" (click)="onReset(); submitted=false">Reset</button>
     </form>
   </div>

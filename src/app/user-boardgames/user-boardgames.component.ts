@@ -13,7 +13,6 @@ import { UserBoardgamesService } from '../user-boardgames.service';
 })
 export class UserBoardgamesComponent implements OnInit {
   private games = [];
-  @Input() game: UserBoardgames;
   constructor(private userservice: UserService, private userboardgameservice: UserBoardgamesService) { }
 
   ngOnInit() {

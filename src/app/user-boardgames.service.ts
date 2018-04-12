@@ -51,7 +51,7 @@ export class UserBoardgamesService {
 
   // }
 
-  editGame(user, gameID, minplayers, maxplayers, playingtime, rating) {
+  editGame(user, gameID, numplayers, playingtime, rating) {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
@@ -59,8 +59,7 @@ export class UserBoardgamesService {
       })
     };
     return this.http.put<any>('http://localhost:8080/userboardgames/' + gameID, {
-      minplayers: minplayers,
-      maxplayers: maxplayers,
+      numplayers: numplayers,
       playingtime: playingtime,
       rating: rating
     },
