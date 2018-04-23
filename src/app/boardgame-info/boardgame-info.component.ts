@@ -3,7 +3,7 @@ import { UserBoardgamesService } from '../user-boardgames.service';
 import { UserService } from '../user.service';
 import { UserBoardgames } from '../user-boardgames-Model';
 import { EditGameForm } from '../edit-boardgame-Model';
-import { Router } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-boardgame-info',
@@ -16,7 +16,18 @@ export class BoardgameInfoComponent implements OnInit {
   edit: EditGameForm;
   @Input() game: UserBoardgames;
   @Input() userboardgame: UserBoardgames;
-  constructor(private userservice: UserService, private userboardgameservice: UserBoardgamesService, public router: Router) { }
+  constructor(private userservice: UserService, private userboardgameservice: UserBoardgamesService, private router: Router) {
+    this.router.routeReuseStrategy.shouldReuseRoute = function () {
+      return false;
+    };
+
+    this.router.events.subscribe((evt) => {
+      if (evt instanceof NavigationEnd) {
+        this.router.navigated = false;
+        window.scrollTo(0, 0);
+      }
+    });
+  }
 
   addGame() {
     this.userboardgameservice.addGame(this.userservice.getuser(), this.game.id).subscribe(user => {
@@ -24,8 +35,11 @@ export class BoardgameInfoComponent implements OnInit {
   }
 
   deleteGame() {
-    console.log('deleting game');
-    this.userboardgameservice.deleteGame(this.userservice.getuser(), this.game.id).subscribe();
+    this.userboardgameservice.deleteGame(this.userservice.getuser(), this.game.id).subscribe(() => {
+      this.router.navigated = false;
+      this.router.navigate([this.router.url]);
+    });
+
   }
 
   ngOnInit() {
