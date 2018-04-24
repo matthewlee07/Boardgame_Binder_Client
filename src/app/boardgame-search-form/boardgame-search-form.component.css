@@ -14,6 +14,14 @@ ul{
     text-align: center
 }
 
+.individual-game:nth-of-type(2n-1){
+    background-color: #30E3CA
+}
+
+.individual-game:nth-of-type(2n){
+    background-color: #11999E
+}
+
 #game-name{
     display: block;
     font-weight: bold;
@@ -21,13 +29,12 @@ ul{
 
 #game-players, #game-playingtime, #game-rating{
     display: block;
-    text-indent: 5%;
 }
 
 .text-center{
     text-align: center;
 }
 
-.space-around{
+/* .space-around{
     border: 1px solid red;
-}
+} */

@@ -1,17 +1,9 @@
-.boardgame-img{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 100%;
-    max-height: 100%;
-}
-
-.more-details{
-    text-align: left
-}
-
-.container{
-    text-align: center;
+.search-results{
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    min-width: 100vw;
+    background-color: #E4F9F5;
 }
 
 ul{
@@ -19,11 +11,19 @@ ul{
     padding-left:0;
 }
 
-/* .individual-game{
+.individual-game{
     margin: 6px;
     padding: 6px;
-    text-align: center;
-} */
+    text-align: center
+}
+
+.individual-game:nth-of-type(2n-1){
+    background-color: #30E3CA
+}
+
+.individual-game:nth-of-type(2n){
+    background-color: #11999E
+}
 
 #game-name{
     display: block;
@@ -32,5 +32,4 @@ ul{
 
 #game-players, #game-playingtime, #game-rating{
     display: block;
-    text-indent: 5%;
 }

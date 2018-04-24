@@ -2,7 +2,7 @@
   <form (ngSubmit)="onSubmit()" #boardGameForm="ngForm" class="text-center search-form">
     <div class="search-filters">
       <div class="form-group">
-        <label for="query">Search by title</label>
+        <label for="query">Search By Title</label>
         <input type="text" class="form-control text-center" placeholder="Settlers of Catan" [(ngModel)]="boardgame.name" name="name">
       </div>
       <div class="form-group">
@@ -68,7 +68,7 @@
 </div>
 <div class="search-results" [hidden]="!submitted">
   <ul>
-    <li *ngFor="let game of boardgames" class="default-hidden individual-game">
+    <li *ngFor="let game of boardgames" class="individual-game">
       <span id="game-name">{{game.name}} </span>
       <span id="game-players">{{game.minplayers}}-{{game.maxplayers}} Players</span>
       <span id="game-playingtime">{{game.playingtime}} Minutes</span>
