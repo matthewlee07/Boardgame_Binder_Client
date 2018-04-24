@@ -1,4 +1,21 @@
+html, body{
+    min-height:100%;
+}
+
 h1{
-    display: flex;
-    justify-content: center;
+    text-align: center;
+}
+
+.container{
+    min-height: 100vh;
+    min-width: 100vw;
+    background-color: #e0f1f5
+}
+
+.text-center{
+    text-align: center;
+}
+
+.welcome{
+    font-size: 24px;
 }

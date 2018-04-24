@@ -19,11 +19,11 @@ ul{
     padding-left:0;
 }
 
-.individual-game{
+/* .individual-game{
     margin: 6px;
     padding: 6px;
-    text-align: center
-}
+    text-align: center;
+} */
 
 #game-name{
     display: block;

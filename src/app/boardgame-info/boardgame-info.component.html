@@ -1,10 +1,7 @@
 <div>
-  <!-- !loggedIn() -->
   <button class="btn btn-default show-details" (click)="showDetails = !showDetails">more details</button>
   <button class="btn btn-default add-game" routerLink="/userLogin" *ngIf="!userservice.isLoggedIn()">login to add game</button>
-  <!-- loggedIn() -->
   <button class="btn btn-default add-game" (click)="addGame()" *ngIf="userservice.isLoggedIn()  && router.url==='/home'">add game</button>
-  <!-- /userBoardgames -->
   <button class="btn btn-default edit-game" (click)="showEdit = !showEdit" *ngIf="userservice.isLoggedIn() && router.url==='/userBoardgames'">edit game</button>
   <button class="btn btn-default delete-game" (click)="deleteGame()" *ngIf="userservice.isLoggedIn()  && router.url==='/userBoardgames'">remove game</button>
 </div>
