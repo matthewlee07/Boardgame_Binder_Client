@@ -5,7 +5,7 @@
         <button mat-menu-item routerLink="/userSignUp" *ngIf="!userservice.isLoggedIn()">Sign Up</button>
         <button mat-menu-item routerLink="/userLogin" *ngIf="!userservice.isLoggedIn()">Log In</button>
         <button mat-menu-item routerLink="/home" type="submit" (click)="logout()" *ngIf="userservice.isLoggedIn()">Log Out</button>
-        <button mat-menu-item routerLink="/userSettings" *ngIf="userservice.isLoggedIn()">My Settings</button>
+        <!-- <button mat-menu-item routerLink="/userSettings" *ngIf="userservice.isLoggedIn()">My Settings</button> -->
         <button mat-menu-item routerLink="/userBoardgames" *ngIf="userservice.isLoggedIn()">My Boardgames</button>
     </mat-menu>
 

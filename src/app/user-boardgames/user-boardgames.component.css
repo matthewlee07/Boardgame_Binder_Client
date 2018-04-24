@@ -1,7 +1,5 @@
 .search-results{
-    display: flex;
-    justify-content: center;
-    min-height: 100vh;
+    min-height: 95vh;
     min-width: 100vw;
     background-color: #E4F9F5;
 }
@@ -32,4 +30,8 @@ ul{
 
 #game-players, #game-playingtime, #game-rating{
     display: block;
+}
+
+h1{
+    text-align: center;
 }

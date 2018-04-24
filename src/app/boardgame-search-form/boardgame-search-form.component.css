@@ -3,6 +3,12 @@
     justify-content: center;
 }
 
+.search-filters{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
 ul{
     list-style:none;
     padding-left:0;
@@ -31,10 +37,10 @@ ul{
     display: block;
 }
 
-.text-center{
+/* .text-center{
     text-align: center;
-}
-
-/* .space-around{
-    border: 1px solid red;
 } */
+
+.space-around{
+    border: 1px solid red;
+}
