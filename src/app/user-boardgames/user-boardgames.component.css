@@ -2,6 +2,7 @@
     min-height: 95vh;
     min-width: 100vw;
     background-color: #E4F9F5;
+    border: 1px solid #E4F9F5;
 }
 
 ul{

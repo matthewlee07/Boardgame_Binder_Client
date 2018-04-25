@@ -1,12 +1,6 @@
-.container{
+.container, .pagination{
     display: flex;
     justify-content: center;
-}
-
-.search-filters{
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
 }
 
 ul{
@@ -29,7 +23,6 @@ ul{
 }
 
 #game-name{
-    display: block;
     font-weight: bold;
 }
 
@@ -37,10 +30,18 @@ ul{
     display: block;
 }
 
-/* .text-center{
-    text-align: center;
-} */
+.page_count{
+    padding:4px;
+}
 
-.space-around{
-    border: 1px solid red;
+.filter{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.filters{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 5px;
 }
