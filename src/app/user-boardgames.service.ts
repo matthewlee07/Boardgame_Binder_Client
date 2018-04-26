@@ -12,18 +12,8 @@ import { UserService } from './user.service';
 @Injectable()
 export class UserBoardgamesService {
 
-<<<<<<< HEAD
-  constructor(private http: HttpClient, private userservice: UserService) {
-    this
-      .getGames(this.userservice.getuser())
-      .subscribe(user => this.boardgames = user.games);
-  }
-
-  boardgames: UserBoardgames[] = [];
-=======
   constructor(private http: HttpClient) { }
   private boardgames = [];
->>>>>>> broken
 
   private handleError<T>(error: Response | any) {
     console.log('An error has happened', error);
@@ -60,12 +50,6 @@ export class UserBoardgamesService {
       .post<any>('http://localhost:8080/userboardgames', { boardgameID: gameID }, httpOptions);
   }
 
-<<<<<<< HEAD
-  add(game: UserBoardgames) {
-    this.boardgames.push(game);
-  }
-
-=======
   // hasGame() {
 
   // }
@@ -94,5 +78,4 @@ export class UserBoardgamesService {
     };
     return this.http.delete<any>('http://localhost:8080/userboardgames/' + gameID, httpOptions);
   }
->>>>>>> broken
 }

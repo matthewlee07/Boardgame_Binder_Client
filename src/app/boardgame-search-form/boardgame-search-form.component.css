@@ -1,10 +1,14 @@
-.container, .pagination{
+.container{
     display: flex;
     justify-content: center;
     box-shadow: 0 0 2px 2px #11999E44;
     padding: 2px;
     border-radius: 4px;
     width: 75%;
+}
+.pagination{
+    display: flex;
+    justify-content: center;
 }
 
 ul{

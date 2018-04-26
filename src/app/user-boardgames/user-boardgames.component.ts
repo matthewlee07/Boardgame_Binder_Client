@@ -11,12 +11,6 @@ import { UserBoardgamesService } from '../user-boardgames.service';
   templateUrl: './user-boardgames.component.html',
   styleUrls: ['./user-boardgames.component.css']
 })
-<<<<<<< HEAD
-export class UserBoardgamesComponent{
-
-  constructor(private userservice: UserService, public userboardgameservice: UserBoardgamesService) { }
-
-=======
 export class UserBoardgamesComponent implements OnInit {
   private games = [];
   constructor(private userservice: UserService, private userboardgameservice: UserBoardgamesService) { }
@@ -28,5 +22,4 @@ export class UserBoardgamesComponent implements OnInit {
       });
     }
   }
->>>>>>> broken
 }

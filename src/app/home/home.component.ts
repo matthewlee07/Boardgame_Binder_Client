@@ -9,13 +9,7 @@ import { UserBoardgamesService } from '../user-boardgames.service';
 })
 
 
-<<<<<<< HEAD
-export class HomeComponent{
-  // question about lifecyle hooks, should I use ngOnChanges?
-  private games = [];
-=======
 export class HomeComponent {
->>>>>>> broken
   constructor(private userservice: UserService, private userboardgameservice: UserBoardgamesService) { }
 
 }
