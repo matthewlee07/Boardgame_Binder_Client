@@ -18,7 +18,6 @@ export class UserSignUpComponent {
       .subscribe(
         user => {
           this.user = user;
-          console.log('', user);
           this.err = null;
           this.userservice.logout();
           this.router.navigateByUrl('/userLogin');

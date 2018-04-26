@@ -1,27 +1,57 @@
-.container{
+.container, .pagination{
     display: flex;
-    justify-content: center
+    justify-content: center;
+    box-shadow: 0 0 2px 2px #11999E44;
+    padding: 2px;
+    border-radius: 4px;
+    width: 75%;
 }
 
 ul{
     list-style:none;
     padding-left:0;
-    border: 1px solid red
 }
 
 .individual-game{
     margin: 6px;
     padding: 6px;
-    border: 1px solid green;
     text-align: center
 }
 
+.individual-game:nth-of-type(odd){
+    background-color: #30E3CA
+}
+
+.individual-game:nth-of-type(even){
+    background-color: #11999E
+}
+
 #game-name{
-    display: block;
     font-weight: bold;
 }
 
 #game-players, #game-playingtime, #game-rating{
     display: block;
-    text-indent: 5%;
+}
+
+.page_count{
+    padding:4px;
+}
+
+.filter{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.filters{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 5px;
+}
+
+@media (min-width:640px){
+    .container{
+        width:50%;
+    }
 }

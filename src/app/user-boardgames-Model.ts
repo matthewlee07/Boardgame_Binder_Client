@@ -1,6 +1,7 @@
 export class UserBoardgames {
-    constructor(values: Object = {}) {
+    constructor() {
     }
+<<<<<<< HEAD
 
             id: number;
             userID: number;
@@ -12,4 +13,17 @@ export class UserBoardgames {
             playtimetime: number;
             name: string;
             rating: number;
+=======
+    id: number;
+    userID: number;
+    boardGameID: number;
+    description: string;
+    image: string;
+    numplayers: number;
+    minplayers: number;
+    maxplayers: number;
+    playingtime: number;
+    name: string;
+    rating: number;
+>>>>>>> broken
 }

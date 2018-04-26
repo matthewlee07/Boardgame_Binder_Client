@@ -1,6 +1,6 @@
 <div class="container">
-  <h2>Sign Up </h2>
-  <div class="container">
+  <div class="signup-form">
+    <h2>Sign Up </h2>
     <form (ngSubmit)="onSubmit()" #userSignUpForm="ngForm">
       <div>
         <label for="query">First Name</label>
@@ -54,31 +54,3 @@
     </form>
   </div>
 </div>
-
-<div>
-  <h2>Submitted status: {{this.submitted}}</h2>
-  <ul>
-    <li>firstName: {{user.firstName}}</li>
-    <li>lastName: {{user.lastName}}</li>
-    <li>dob: {{user.dob}}</li>
-    <li>username: {{user.userName}}</li>
-    <li>password: {{user.password}}</li>
-    <li>confirm password: {{user.confirmPassword}}</li>
-    <li>email: {{user.email}}</li>
-  </ul>
-</div>
-
-<div *ngIf="err">
-  <p>testing error: {{err}}</p>
-</div>
-
-<!-- <div *ngIf="success">
-  <p>Success!</p>
-  <p>{{userservice.getuser().firstName}} added!</p>
-</div> -->
-
-<!-- if username or email is taken, those fields should be reset
-  if submitting successfullly after a failure, still shows error div
-  new success message isn't rendered
-  user is null, undefined on ngModel
--->

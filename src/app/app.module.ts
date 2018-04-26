@@ -23,6 +23,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UserService } from './user.service';
 import { LoginRouteGuard } from './loginRouteGuard';
 import { UserBoardgamesService } from './user-boardgames.service';
+import { EditGameFormComponent } from './edit-game-form/edit-game-form.component';
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'about', component: AboutComponent },
@@ -49,6 +50,7 @@ const appRoutes: Routes = [
     NavbarComponent,
     BoardgameSearchFormComponent,
     ConfirmPasswordDirective,
+    EditGameFormComponent
   ],
   imports: [
     BrowserModule, BrowserAnimationsModule,

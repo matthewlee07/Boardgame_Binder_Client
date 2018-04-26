@@ -15,7 +15,7 @@ export class UserLoginComponent {
   loggedIn = false;
   err = null;
   forgotPassword() {
-    console.log('resending password');
+    console.log('resending password not functional');
   }
 
   onSubmit() {

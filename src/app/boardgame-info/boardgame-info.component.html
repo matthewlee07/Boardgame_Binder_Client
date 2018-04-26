@@ -1,7 +1,9 @@
 <div>
-  <button class="btn show-details" (click)="showDetails = !showDetails">more details</button>
-  <button class="btn add-game" (click)="addGame()" *ngIf="userservice.isLoggedIn()">add game</button>
-  <button class="btn add-game" routerLink="/userLogin" *ngIf="!userservice.isLoggedIn()">login to add game</button>
+  <button class="btn btn-default show-details" (click)="showDetails = !showDetails">more details</button>
+  <button class="btn btn-default add-game" routerLink="/userLogin" *ngIf="!userservice.isLoggedIn()">login to add game</button>
+  <button class="btn btn-default add-game" (click)="addGame()" *ngIf="userservice.isLoggedIn()  && router.url==='/home'">add game</button>
+  <button class="btn btn-default edit-game" (click)="showEdit = !showEdit" *ngIf="userservice.isLoggedIn() && router.url==='/userBoardgames'">edit game</button>
+  <button class="btn btn-default delete-game" (click)="deleteGame()" *ngIf="userservice.isLoggedIn()  && router.url==='/userBoardgames'">remove game</button>
 </div>
 
 <div [hidden]="!showDetails">
@@ -9,4 +11,8 @@
     <p class="more-details" [innerHTML]="game.description"></p>
     <img class="boardgame-img" src={{game.image}}>
   </div>
+</div>
+
+<div [hidden]="!showEdit">
+  <app-edit-game-form [edit]="edit" [userboardgame]="game"></app-edit-game-form>
 </div>

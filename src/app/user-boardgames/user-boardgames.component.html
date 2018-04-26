@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="container">
   <h2>You Games</h2>
 </div>
@@ -22,4 +23,17 @@
     <!-- <button class="btn edit-game" (click)="editGame()" >edit game</button>
       <button class="btn remove-game" (click)="removeGame*()">remove game</button> -->
   </div>
+=======
+<div class="search-results">
+  <h1>Your Games</h1>
+  <ul>
+    <li *ngFor="let game of games" class="individual-game">
+      <span id="game-name">{{game.name}} </span>
+      <span id="game-players">{{game.minplayers}}-{{game.maxplayers}} Players</span>
+      <span id="game-playingtime">{{game.playingtime}} Minutes</span>
+      <span id="game-rating">{{game.rating}} Rating</span>
+      <app-boardgame-info [game]="game.UserBoardGame"></app-boardgame-info>
+    </li>
+  </ul>
+>>>>>>> broken
 </div>

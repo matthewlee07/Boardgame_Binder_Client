@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { User } from '../userModel';
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
+import { UserBoardgames } from '../user-boardgames-Model';
 import { UserBoardgamesService } from '../user-boardgames.service';
 
 
@@ -10,8 +11,22 @@ import { UserBoardgamesService } from '../user-boardgames.service';
   templateUrl: './user-boardgames.component.html',
   styleUrls: ['./user-boardgames.component.css']
 })
+<<<<<<< HEAD
 export class UserBoardgamesComponent{
 
   constructor(private userservice: UserService, public userboardgameservice: UserBoardgamesService) { }
 
+=======
+export class UserBoardgamesComponent implements OnInit {
+  private games = [];
+  constructor(private userservice: UserService, private userboardgameservice: UserBoardgamesService) { }
+
+  ngOnInit() {
+    if (this.userservice.isLoggedIn()) {
+      this.userboardgameservice.getGames(this.userservice.getuser()).subscribe(user => {
+        this.games = user.games;
+      });
+    }
+  }
+>>>>>>> broken
 }

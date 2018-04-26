@@ -1,9 +1,38 @@
-.boardgame-img{
-    display: block;
-    max-width: 100%;
-    max-height: 100%;
+.search-results{
+    min-height: 95vh;
+    min-width: 100vw;
+    background-color: #E4F9F5;
+    border: 1px solid #E4F9F5;
 }
 
-.more-details{
-    text-align: left
+ul{
+    list-style:none;
+    padding-left:0;
+}
+
+.individual-game{
+    margin: 6px;
+    padding: 6px;
+    text-align: center
+}
+
+.individual-game:nth-of-type(2n-1){
+    background-color: #30E3CA
+}
+
+.individual-game:nth-of-type(2n){
+    background-color: #11999E
+}
+
+#game-name{
+    display: block;
+    font-weight: bold;
+}
+
+#game-players, #game-playingtime, #game-rating{
+    display: block;
+}
+
+h1{
+    text-align: center;
 }
