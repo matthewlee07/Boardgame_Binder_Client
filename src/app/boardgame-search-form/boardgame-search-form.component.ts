@@ -25,6 +25,20 @@ export class BoardgameSearchFormComponent {
       this.boardgame)
       .subscribe(data => this.boardgames = data);
   }
+  next_page() {
+    this.boardgameservice.page += 1;
+    this.search();
+  }
 
+  previous_page() {
+    if (this.boardgameservice.page >= 1) {
+      this.boardgameservice.page -= 1;
+      this.search();
+    }
+  }
+  search_button() {
+    this.boardgameservice.page = 0;
+    this.search();
+  }
 }
 

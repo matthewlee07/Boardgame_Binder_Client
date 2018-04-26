@@ -65,7 +65,7 @@
     </div>
 
 
-    <button type="submit" class="btn btn-success" [disabled]="!boardGameForm.form.valid" (click)="search()">Submit</button>
+    <button type="submit" class="btn btn-success" [disabled]="!boardGameForm.form.valid" (click)="search_button()">Submit</button>
 
     <button type="submit" class="btn btn-default" (click)="onReset(); submitted=false">Reset</button>
   </form>
@@ -81,8 +81,8 @@
     </li>
   </ul>
   <section class="pagination">
-    <button class="btn btn-default page_count previous_page">&#8249;</button>
-    <span class="page_count page_counter"></span>
-    <button class="btn btn-default page_count next_page">&#8250;</button>
+    <button class="btn btn-default page_count previous_page" (click)="previous_page()">&#8249;</button>
+    <span class="page_count page_counter">{{boardgameservice.page+1}}</span>
+    <button class="btn btn-default page_count next_page" (click)="next_page()">&#8250;</button>
   </section>
 </div>
