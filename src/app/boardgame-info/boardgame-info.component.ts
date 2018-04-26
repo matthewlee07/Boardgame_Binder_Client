@@ -31,11 +31,6 @@ export class BoardgameInfoComponent implements OnInit {
 
   addGame() {
     this.userboardgameservice.addGame(this.userservice.getuser(), this.game.id).subscribe(user => {
-<<<<<<< HEAD
-      console.log('added game');
-      this.userboardgameservice.add(user);
-=======
->>>>>>> broken
     });
   }
 
