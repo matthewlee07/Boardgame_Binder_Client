@@ -1,6 +1,6 @@
 <div class="container">
   <form (ngSubmit)="onSubmit()" #userLogInForm="ngForm">
-    <h1>User Login</h1>
+    <h2>User Login</h2>
     <div>
       <label for="query">Username</label>
       <input type="text" class="form-group" #userName="ngModel" [(ngModel)]="user.userName" name="userName" required>
@@ -18,6 +18,14 @@
     </div>
     <button type="submit" class="btn btn-success" [disabled]="!userLogInForm.form.valid">Submit</button>
     <button type="submit" class="btn btn-default default-hidden" (click)="forgotPassword()" disabled>Forgot Password</button>
-    <button routerLink="/userSignUp">Sign Up</button>
+    <p>Don't have an account?
+      <a routerLink="/userSignUp">Sign Up</a>
+    </p>
+    <p>Demo Account:
+      <br />
+      <span class="username">username: johnsmith</span>
+      <br />
+      <span class="password">password: password123</span>
+    </p>
   </form>
 </div>

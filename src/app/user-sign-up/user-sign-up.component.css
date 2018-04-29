@@ -1,9 +1,16 @@
 .container{
-    min-width: 100vw;
+    display: flex;
+    justify-content: center;
     min-height: 95vh;
+    min-width: 100vw;
     background-color: #E4F9F5;
 }
 
 .signup-form{
     padding: 0% 5%;
+}
+
+h2{
+    color: #11999E;
+    text-align: center;
 }

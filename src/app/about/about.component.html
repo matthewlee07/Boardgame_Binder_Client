@@ -2,19 +2,31 @@
   <h1>About Boardgame Binder</h1>
   <p>Boardgame Binder has access to nearly 10,000 of your favorite boardgames! Find and track games with filters including number
     of players, playing time, and ratings per
-    <a href="https://boardgamegeek.com/">BoardGameGeek</a>
+    <a href="https://boardgamegeek.com/">BoardGameGeek</a>.
   </p>
-  <p>[Instructions how to use app]</p>
-  <p>[Matthew Lee/link to portfolio] created this app to showcase his full stack web dev skills. Boardgame Binder uses SQL,
-    Express, Angular, and Node.js </p>
-    <h2>Front End</h2>
-  <p>Angular 5 template driven forms comprise most of the front-end. Guards and validation are in place to protect routes and
-    data injection. Minimal CSS and Angular Material are used, with mobile-first design.</p>
-    <h2>Back End</h2>
-  <p>The back end uses SQLite because of the
-    <a href="https://www.kaggle.com/gabrio/board-games-dataset">dataset source.</a> Three tables are used in this relational DB in order to add boardgames to user's profile.
+  <p>[Matthew Lee/link to portfolio] created this app to showcase his full stack web dev abilites. Boardgame Binder uses Angular,
+    Express, Node.js and SQLite + Sequlize.</p>
+  <p>SQLite was chosen because of the
+    <a href="https://www.kaggle.com/gabrio/board-games-dataset">open source dataset source.</a>
   </p>
 
-  <p>Incomplete features includes editing User Profile information, social networking plugins, and email intigration such as
-    confirming account creation and "forgot password" ability.</p>
+  <h2>Using App</h2>
+  <p>
+    On home page, click "Submit" to start a search for boardgames. Optional filters include keyword, number of players, playing
+    time, and rating per BoardGameGeeks.
+    <br> Click "more details" for game description and image. If already logged in, click "add game" to add game to personal
+    binder; otherwise click "log in" to log in and then add game.
+    <br> Click "Sign Up" or use Demo Account to use account able to add game. Enter information on sign up form. Username and
+    email must be unique; password must be minimum 7 characters and include a letter and number.
+    <br> When logged in, go to "My Binder" to manage personal games. Click "edit game" to save personal gameplay information.
+    Click "remove game" to remove game from Binder.
+  </p>
+  <h2>Further Features</h2>
+  <ul>
+    <li>Date of Birth with calendar at User Sign Up</li>
+    <li>Ability to edit User Profile information</li>
+    <li>Email registration, confirmation, and forgot password</li>
+    <li>Better password guards on sign up</li>
+    <li>Social networking integration</li>
+  </ul>
 </div>

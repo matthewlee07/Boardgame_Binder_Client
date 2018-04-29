@@ -50,7 +50,11 @@
           <input type="checkbox" [(ngModel)]="user.terms" name="terms" required> Confirm that I've read the Terms and Conditions
         </label>
       </div>
+      <p>Already have an account?
+        <a routerLink="/userLogin">Log In</a>
+      </p>
       <button type="submit" class="btn btn-success" [disabled]="!userSignUpForm.form.valid">Submit</button>
+
     </form>
   </div>
 </div>
