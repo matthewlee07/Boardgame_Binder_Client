@@ -18,7 +18,7 @@ export class UserService {
   }
 
   signup(user: User) {
-    return this.http.post<User>('http://localhost:8080/users/', {
+    return this.http.post<User>('https://boardgame-binder.herokuapp.com/', {
       userName: user.userName,
       firstName: user.firstName,
       lastName: user.lastName,
@@ -39,7 +39,7 @@ export class UserService {
   }
 
   login(user: User) {
-    return this.http.post<any>('http://localhost:8080/auth/login/', {
+    return this.http.post<any>('https://boardgame-binder.herokuapp.com/', {
       // unsure why, but this is the only 'username' vs 'userName'
       username: user.userName,
       password: user.password,

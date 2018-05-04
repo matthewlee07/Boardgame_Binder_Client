@@ -27,7 +27,7 @@ export class UserBoardgamesService {
         'Authorization': `bearer ${user.token}`
       })
     };
-    return this.http.get<User>('http://localhost:8080/userboardgames', httpOptions);
+    return this.http.get<User>('https://boardgame-binder.herokuapp.com/', httpOptions);
   }
 
   /** POST: add a new hero to the database */
@@ -47,7 +47,7 @@ export class UserBoardgamesService {
     };
     return this
       .http
-      .post<any>('http://localhost:8080/userboardgames', { boardgameID: gameID }, httpOptions);
+      .post<any>('https://boardgame-binder.herokuapp.com/', { boardgameID: gameID }, httpOptions);
   }
 
   // hasGame() {
@@ -61,7 +61,7 @@ export class UserBoardgamesService {
         'Authorization': `bearer ${user.token}`,
       })
     };
-    return this.http.put<any>('http://localhost:8080/userboardgames/' + gameID, {
+    return this.http.put<any>('https://boardgame-binder.herokuapp.com/' + gameID, {
       numplayers: numplayers,
       playingtime: playingtime,
       rating: rating
@@ -76,6 +76,6 @@ export class UserBoardgamesService {
         'Authorization': `bearer ${user.token}`,
       })
     };
-    return this.http.delete<any>('http://localhost:8080/userboardgames/' + gameID, httpOptions);
+    return this.http.delete<any>('https://boardgame-binder.herokuapp.com/' + gameID, httpOptions);
   }
 }
