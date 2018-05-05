@@ -14,5 +14,5 @@ export class User {
     email: string;
     terms: boolean;
     token: string;
-    games
+    games;
 }
