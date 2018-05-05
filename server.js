@@ -3,11 +3,11 @@ const path = require('path');
 
 const app = express();
 
-app.use(express.static(__dirname + '/dist/apps/boardgame-binder/deploy/github'));
+app.use(express.static(__dirname + '/dist/boardgames'));
 
 app.get('/*a', function (req, res) {
 
-    res.sendFile(path.join(__dirname + '/dist/apps/boardgame-binder/deploy/github'));
+    res.sendFile(path.join(__dirname + '/dist/boardgames'));
 });
 
 app.listen(process.env.PORT || 8080);
