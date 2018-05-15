@@ -1,5 +1,6 @@
 export class User {
     constructor(values: Object = {}) {
+        this.password = { password: '', confirmPassword: '' };
     }
 
     id: number;
