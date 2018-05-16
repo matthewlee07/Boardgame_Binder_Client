@@ -53,7 +53,7 @@ export class UserBoardgamesService {
         'Authorization': `bearer ${user.token}`,
       })
     };
-    return this.http.put<any>('https://boardgame-binder.herokuapp.com/userBoardgames' + gameID, {
+    return this.http.put<any>('https://boardgame-binder.herokuapp.com/userBoardgames' + { boardgameID: gameID }, {
       numplayers: numplayers,
       playingtime: playingtime,
       rating: rating
@@ -68,6 +68,6 @@ export class UserBoardgamesService {
         'Authorization': `bearer ${user.token}`,
       })
     };
-    return this.http.delete<any>('https://boardgame-binder.herokuapp.com/userBoardgames' + gameID, httpOptions);
+    return this.http.delete<any>('https://boardgame-binder.herokuapp.com/userBoardgames' + { boardgameID: gameID }, httpOptions);
   }
 }
