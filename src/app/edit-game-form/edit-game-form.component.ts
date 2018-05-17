@@ -24,7 +24,7 @@ export class EditGameFormComponent implements OnInit {
   save() {
     this.userboardgameservice.editGame(
       this.userservice.getuser(),
-      this.userboardgame.boardGameID,
+      this.userboardgame.id,
       this.edit.numplayers,
       this.edit.playingtime,
       this.edit.rating).subscribe();
