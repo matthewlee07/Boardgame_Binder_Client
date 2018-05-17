@@ -35,7 +35,8 @@ export class BoardgameInfoComponent implements OnInit {
   }
 
   deleteGame() {
-    this.userboardgameservice.deleteGame(this.userservice.getuser(), this.game.id).subscribe(() => {
+    this.userboardgameservice.deleteGame(this.userservice.getuser(), this.game.boardGameID).subscribe(() => {
+      console.log('game.boardGameID: ' + this.game.boardGameID);
       this.router.navigated = false;
       this.router.navigate([this.router.url]);
     });
