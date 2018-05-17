@@ -28,7 +28,7 @@ export class EditGameFormComponent implements OnInit {
       this.edit.numplayers,
       this.edit.playingtime,
       this.edit.rating).subscribe();
-    console.log(this.userboardgame);
+    console.log('this.userboardgame: ' + this.userboardgame);
   }
 
   ngOnInit() {

@@ -47,7 +47,7 @@ export class UserBoardgamesService {
   // }
 
   editGame(user, gameID, numplayers, playingtime, rating) {
-    console.log('editGame+user: ' + user, 'gameID: ' + gameID);
+    console.log('gameID: ' + gameID);
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
