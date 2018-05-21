@@ -23,7 +23,8 @@ export class UserService {
       firstName: user.firstName,
       lastName: user.lastName,
       email: user.email,
-      password: user.password,
+      password: user.password.password,
+      confirmPassword: user.password.confirmPassword
       // dob: user.dob
     })
       .pipe(catchError(this.handleError));
@@ -42,7 +43,7 @@ export class UserService {
     return this.http.post<any>('https://boardgame-binder.herokuapp.com/auth/login', {
       // unsure why, but this is the only 'username' vs 'userName'
       username: user.userName,
-      password: user.password,
+      password: user.password.password,
     });
   }
 
