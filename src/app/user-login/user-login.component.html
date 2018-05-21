@@ -3,14 +3,14 @@
     <h2>User Login</h2>
     <div>
       <label for="query">Username</label>
-      <input type="text" class="form-group" #userName="ngModel" [(ngModel)]="user.userName" name="userName" required>
+      <input placeholder="johnsmith" type="text" class="form-group" #userName="ngModel" [(ngModel)]="user.userName" name="userName" required>
       <div [hidden]="!err || userName.pristine" class="alert alert-danger">
         Incorrect Username or Password
       </div>
     </div>
     <div>
       <label for="password">Password</label>
-      <input placeholder="" type="password" class="form-group" #password="ngModel" [(ngModel)]="user.password.password" name="password" autocomplete="off" required>
+      <input placeholder="password123" type="password" class="form-group" #password="ngModel" [(ngModel)]="user.password.password" name="password" autocomplete="off" required>
       <div [hidden]="!err || password.pristine" class="alert alert-danger">
         Incorrect Username or Password
       </div>
