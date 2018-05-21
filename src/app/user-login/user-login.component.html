@@ -10,7 +10,7 @@
     </div>
     <div>
       <label for="password">Password</label>
-      <input type="password" class="form-group" #password="ngModel" [(ngModel)]="user.password" name="password" autocomplete="off" required>
+      <input placeholder="Password" type="password" class="form-group" #password="ngModel" [(ngModel)]="user.password.password" name="password" autocomplete="off" required>
       <div [hidden]="!err || password.pristine" class="alert alert-danger">
         Incorrect Username or Password
       </div>
