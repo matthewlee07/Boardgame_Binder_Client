@@ -23,8 +23,9 @@ export class UserService {
       firstName: user.firstName,
       lastName: user.lastName,
       email: user.email,
-      password: user.password.password,
-      confirmPassword: user.password.confirmPassword
+      password: user.password,
+      // password: user.password.password,
+      // confirmPassword: user.password.confirmPassword
       // dob: user.dob
     })
       .pipe(catchError(this.handleError));
