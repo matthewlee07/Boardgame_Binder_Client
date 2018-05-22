@@ -1,5 +1,7 @@
 language: node_js
 node_js: node
+addons:
+  firefox: "49.0"
 deploy:
   provider: heroku
   api_key:
