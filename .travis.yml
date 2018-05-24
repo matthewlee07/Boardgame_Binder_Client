@@ -4,6 +4,11 @@ deploy:
   provider: heroku
   api_key:
     secure: RX5wRyHEKCw6i/IAlMcB16GgWjg7FZ1rqCIgdtbylCp4v2nLdCWblEfz74N5IAKZ4WZWNMRS5S+5/1QGpCW9aemzut0vu3yW8GQZ3dDQ3qNLhVenEKdR5e5RLb8xZOhGNixCV43R2nl0v9mhVzp7nS9XZEVJiYfqlfDT29SSUC984EBz3is0kvyQ46ayuVPEM5wbdxW4skov6Qlpv222Qg3UbcAmjpgG4XpKIqJ/FHgV0bSN0AUejEsoAXfddbLAyP/jbHmeO+qQ8tggd96Mg0Gzh3nnLmrMM7sVovIx+JzQZ+xQ0XxpbFztNMC1LtMdR3iP1tMbAob6aBwreO7TL/pp50UBmM+g96IiAHWgl3Xdz5MN1kporVuH/QTdsOF/phiRfkBZFMlQgcYSXhuhvgIW4+YGJvGoF54y0atGkmFhU09DhzsWi6OnkYllNf/CDbXskNRJVsYLcYjCvTm65wSlTaJvwHtqovwy37s3iuu0JfZvMC1/B8ngHIPZ0lkFWN1EfQSABWtMsSlBbK9Uybw5VBABtbmBpxJskDuDg7oIL/uT2I/RZHTW//4gaJLcDZhGnvpIGKK6ns6A1Pv8X+BOv01R+KJIVPJ+ixQVusl8sHtuNnfsUJMuGFlP4oLAYawVToAFbwyduZhmtnNVYL7oxqiObkegBxKypU+InSI=
+    # secure: fd386146-186c-45ac-a4e3-6113a119f622
+  app: boardgame-binder-client
+  on:
+    repo: matthewlee07/BoardgameFinder-Client
+
   app: boardgame-binder-client
   on:
     repo: matthewlee07/BoardgameFinder-Client
