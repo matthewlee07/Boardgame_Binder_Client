@@ -27,16 +27,8 @@ export class UserBoardgamesService {
         'Authorization': `bearer ${user.token}`
       })
     };
-    return this.http.get<User>('http://localhost:8080/userboardgames', httpOptions);
+    return this.http.get<User>('https://boardgame-binder.herokuapp.com/userboardgames', httpOptions);
   }
-
-  /** POST: add a new hero to the database */
-  // addHero(hero: Hero): Observable<Hero> {
-  //   return this.http.post<Hero>(this.heroesUrl, hero, httpOptions)
-  //     .pipe(
-  //       catchError(this.handleError('addHero', hero))
-  //     );
-  // }
 
   addGame(user, gameID) {
     const httpOptions = {
@@ -47,7 +39,7 @@ export class UserBoardgamesService {
     };
     return this
       .http
-      .post<any>('http://localhost:8080/userboardgames', { boardgameID: gameID }, httpOptions);
+      .post<any>('https://boardgame-binder.herokuapp.com/userBoardgames', { boardgameID: gameID }, httpOptions);
   }
 
   // hasGame() {
@@ -55,13 +47,14 @@ export class UserBoardgamesService {
   // }
 
   editGame(user, gameID, numplayers, playingtime, rating) {
+    console.log('gameID: ' + gameID);
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
         'Authorization': `bearer ${user.token}`,
       })
     };
-    return this.http.put<any>('http://localhost:8080/userboardgames/' + gameID, {
+    return this.http.put<any>('https://boardgame-binder.herokuapp.com/userBoardgames/' + gameID, {
       numplayers: numplayers,
       playingtime: playingtime,
       rating: rating
@@ -76,6 +69,6 @@ export class UserBoardgamesService {
         'Authorization': `bearer ${user.token}`,
       })
     };
-    return this.http.delete<any>('http://localhost:8080/userboardgames/' + gameID, httpOptions);
+    return this.http.delete<any>('https://boardgame-binder.herokuapp.com/userBoardgames/' + gameID, httpOptions);
   }
 }

@@ -6,7 +6,11 @@
     background-color: #E4F9F5;
 }
 
-h1{
+h2{
     text-align: center;
-    margin: 16px;
+    color: #11999E
+}
+
+p{
+    margin: 14px;
 }

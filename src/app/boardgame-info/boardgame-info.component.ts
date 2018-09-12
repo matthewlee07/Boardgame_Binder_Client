@@ -16,7 +16,7 @@ export class BoardgameInfoComponent implements OnInit {
   edit: EditGameForm;
   @Input() game: UserBoardgames;
   @Input() userboardgame: UserBoardgames;
-  constructor(private userservice: UserService, private userboardgameservice: UserBoardgamesService, private router: Router) {
+  constructor(public userservice: UserService, public userboardgameservice: UserBoardgamesService, public router: Router) {
     this.router.routeReuseStrategy.shouldReuseRoute = function () {
       return false;
     };
@@ -35,7 +35,8 @@ export class BoardgameInfoComponent implements OnInit {
   }
 
   deleteGame() {
-    this.userboardgameservice.deleteGame(this.userservice.getuser(), this.game.id).subscribe(() => {
+    this.userboardgameservice.deleteGame(this.userservice.getuser(), this.game.boardGameID).subscribe(() => {
+      console.log('game.boardGameID: ' + this.game.boardGameID);
       this.router.navigated = false;
       this.router.navigate([this.router.url]);
     });

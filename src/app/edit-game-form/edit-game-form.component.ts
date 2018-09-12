@@ -24,11 +24,11 @@ export class EditGameFormComponent implements OnInit {
   save() {
     this.userboardgameservice.editGame(
       this.userservice.getuser(),
-      this.userboardgame.id,
+      this.userboardgame.boardGameID,
       this.edit.numplayers,
       this.edit.playingtime,
       this.edit.rating).subscribe();
-    console.log('trying to save');
+    console.log('this.userboardgame: ' + this.userboardgame);
   }
 
   ngOnInit() {

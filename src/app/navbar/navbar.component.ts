@@ -10,7 +10,7 @@ import { UserBoardgamesService } from '../user-boardgames.service';
 })
 export class NavbarComponent {
   // need to understand this
-  constructor(private userservice: UserService) { }
+  constructor(public userservice: UserService) { }
 
   logout() {
     this.userservice.logout();

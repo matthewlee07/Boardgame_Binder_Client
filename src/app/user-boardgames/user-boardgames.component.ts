@@ -12,8 +12,8 @@ import { UserBoardgamesService } from '../user-boardgames.service';
   styleUrls: ['./user-boardgames.component.css']
 })
 export class UserBoardgamesComponent implements OnInit {
-  private games = [];
-  constructor(private userservice: UserService, private userboardgameservice: UserBoardgamesService) { }
+  public games = [];
+  constructor(public userservice: UserService, public userboardgameservice: UserBoardgamesService) { }
 
   ngOnInit() {
     if (this.userservice.isLoggedIn()) {

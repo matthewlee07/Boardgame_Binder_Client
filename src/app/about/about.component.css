@@ -7,8 +7,15 @@
 
 h1{
     text-align: center;
+    color: #11999E
+}
+
+h2{
+    text-align: center;
+    color: #11999E
 }
 
 p{
-    margin: 24px;
+    margin: 4px;
+    line-height: 24px;
 }

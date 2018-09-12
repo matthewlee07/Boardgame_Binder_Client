@@ -4,7 +4,7 @@ export class Boardgame {
         this.minplayers = 2;
         this.maxplayers = 10;
         this.minplayingtime = 15;
-        this.maxplayingtime = 60;
+        this.maxplayingtime = 300;
         this.minrating = 5;
         this.maxrating = 10;
     }
