@@ -1,5 +1,6 @@
 export class User {
     constructor(values: Object = {}) {
+        this.password = { password: '', confirmPassword: '' };
     }
 
     id: number;
@@ -14,5 +15,5 @@ export class User {
     email: string;
     terms: boolean;
     token: string;
-    games
+    games;
 }

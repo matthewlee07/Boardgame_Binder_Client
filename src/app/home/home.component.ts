@@ -10,6 +10,6 @@ import { UserBoardgamesService } from '../user-boardgames.service';
 
 
 export class HomeComponent {
-  constructor(private userservice: UserService, private userboardgameservice: UserBoardgamesService) { }
+  constructor(public userservice: UserService, public userboardgameservice: UserBoardgamesService) { }
 
 }

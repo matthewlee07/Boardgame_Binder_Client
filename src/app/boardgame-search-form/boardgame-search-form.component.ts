@@ -8,7 +8,7 @@ import { BoardgameService } from '../boardgame.service';
   styleUrls: ['./boardgame-search-form.component.css']
 })
 export class BoardgameSearchFormComponent {
-  constructor(private boardgameservice: BoardgameService) { }
+  constructor(public boardgameservice: BoardgameService) { }
 
   boardgames = [];
   counter = Array.from(Array(20).keys());

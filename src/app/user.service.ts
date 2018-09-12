@@ -18,12 +18,13 @@ export class UserService {
   }
 
   signup(user: User) {
-    return this.http.post<User>('http://localhost:8080/users/', {
+    return this.http.post<User>('http://localhost:8080/users', {
       userName: user.userName,
       firstName: user.firstName,
       lastName: user.lastName,
       email: user.email,
-      password: user.password,
+      password: user.password.password,
+      confirmPassword: user.password.confirmPassword
       // dob: user.dob
     })
       .pipe(catchError(this.handleError));
@@ -39,10 +40,10 @@ export class UserService {
   }
 
   login(user: User) {
-    return this.http.post<any>('http://localhost:8080/auth/login/', {
+    return this.http.post<any>('http://localhost:8080/auth/login', {
       // unsure why, but this is the only 'username' vs 'userName'
       username: user.userName,
-      password: user.password,
+      password: user.password.password,
     });
   }
 
