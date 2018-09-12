@@ -6,7 +6,7 @@ import { Boardgame } from './boardgameModel';
 @Injectable()
 export class BoardgameService {
   page = 0;
-  private boardgameUrl = 'https://boardgame-binder.herokuapp.com/boardgames';
+  private boardgameUrl = 'localhost:8080/boardgames';
 
   getBoardGame(boardgame): Observable<Boardgame[]> {
     const params = new HttpParams();
