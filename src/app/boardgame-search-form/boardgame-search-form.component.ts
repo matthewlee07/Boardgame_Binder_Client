@@ -29,7 +29,6 @@ export class BoardgameSearchFormComponent {
     this.boardgameservice.page += 1;
     this.search();
   }
-
   previous_page() {
     if (this.boardgameservice.page >= 1) {
       this.boardgameservice.page -= 1;
@@ -39,6 +38,10 @@ export class BoardgameSearchFormComponent {
   search_button() {
     this.boardgameservice.page = 0;
     this.search();
+  }
+  top_page() {
+    console.log('top floor please');
+    window.scrollTo(0, 50);
   }
 }
 
