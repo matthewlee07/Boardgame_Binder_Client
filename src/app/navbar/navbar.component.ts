@@ -9,7 +9,6 @@ import { UserBoardgamesService } from '../user-boardgames.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-  // need to understand this
   constructor(private userservice: UserService) { }
 
   logout() {

@@ -5,6 +5,8 @@ import { Boardgame } from './boardgameModel';
 
 @Injectable()
 export class BoardgameService {
+  constructor(private http: HttpClient) { }
+
   page: number = 0;
   private boardgameUrl = 'http://localhost:8080/boardgames';
 
@@ -13,11 +15,4 @@ export class BoardgameService {
     boardgame.page = this.page;
     return this.http.get<Boardgame[]>(this.boardgameUrl, { params: boardgame });
   }
-
-
-
-  constructor(
-    private http: HttpClient
-  ) { }
-
 }

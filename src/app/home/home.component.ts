@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { UserService } from '../user.service';
 import { UserBoardgamesService } from '../user-boardgames.service';
 
@@ -11,5 +11,4 @@ import { UserBoardgamesService } from '../user-boardgames.service';
 
 export class HomeComponent {
   constructor(private userservice: UserService, private userboardgameservice: UserBoardgamesService) { }
-
 }

@@ -1,11 +1,10 @@
 export class User {
-    constructor(values: Object = {}) {
+    constructor() {
     }
 
     id: number;
     firstName: string;
     lastName: string;
-    // dob: Date;
     userName: string;
     password: {
         password: string;
