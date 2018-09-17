@@ -28,11 +28,13 @@ export class BoardgameSearchFormComponent {
   next_page() {
     this.boardgameservice.page += 1;
     this.search();
+    this.top_page();
   }
   previous_page() {
     if (this.boardgameservice.page >= 1) {
       this.boardgameservice.page -= 1;
       this.search();
+      this.top_page();
     }
   }
   search_button() {
@@ -40,7 +42,6 @@ export class BoardgameSearchFormComponent {
     this.search();
   }
   top_page() {
-    console.log('top floor please');
     window.scrollTo(0, 50);
   }
 }
