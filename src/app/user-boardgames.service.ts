@@ -7,7 +7,6 @@ import { User } from './userModel';
 @Injectable()
 export class UserBoardgamesService {
   constructor(private http: HttpClient) { }
-  //not implemented
   private handleError<T>(error: Response | any) {
     return Observable.throw(error.error.message);
   }
