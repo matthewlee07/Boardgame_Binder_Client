@@ -18,4 +18,7 @@
       <app-boardgame-info [game]="game.UserBoardGame"></app-boardgame-info>
     </li>
   </ul>
+  <div *ngIf="numberGames>10">
+    <button class="btn scroll" (click)="top_page()">Top</button>
+  </div>
 </div>
