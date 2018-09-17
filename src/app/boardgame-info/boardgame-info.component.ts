@@ -39,7 +39,6 @@ export class BoardgameInfoComponent implements OnInit {
       this.router.navigated = false;
       this.router.navigate([this.router.url]);
     });
-
   }
 
   ngOnInit() {

@@ -1,10 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { User } from '../userModel';
+import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
-import { Router } from '@angular/router';
-import { UserBoardgames } from '../user-boardgames-Model';
 import { UserBoardgamesService } from '../user-boardgames.service';
-
 
 @Component({
   selector: 'app-user-boardgames',
