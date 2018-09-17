@@ -2,13 +2,11 @@
   <h1>Your Binder</h1>
 
   <div *ngIf="!hasGames">
-    <p>hasGames: {{hasGames}}</p>
     <p>Your binder has no games.</p>
     <p><a routerLink="/home">Search </a>for games to add.</p>
   </div>
   <div *ngIf="hasGames">
-    <p>hasGames: {{hasGames}}</p>
-    <p>Your binder has {{numberGames}} games!</p>
+    <p>Number of games in your binder: {{numberGames}}</p>
     <p><a routerLink="/home">Search </a>for games to add.</p>
   </div>
   <ul>

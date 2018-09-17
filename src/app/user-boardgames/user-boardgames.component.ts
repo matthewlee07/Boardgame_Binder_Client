@@ -11,13 +11,12 @@ export class UserBoardgamesComponent implements OnInit {
   private games = [];
   constructor(private userservice: UserService, private userboardgameservice: UserBoardgamesService) { }
   ngOnInit() {
-    let hasGames;
-    let numberGames;
     if (this.userservice.isLoggedIn()) {
       this.userboardgameservice.getGames(this.userservice.getuser()).subscribe(user => {
         this.games = user.games;
-        numberGames = this.games.length;
-        numberGames > 0 ? this.hasGames = true : this.hasGames = false;
+        this.numberGames = this.games.length;
+        console.log(`numberGames: ${this.numberGames}`);
+        this.numberGames > 0 ? this.hasGames = true : this.hasGames = false;
       });
     }
   }
